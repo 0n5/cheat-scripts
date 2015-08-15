@@ -38,7 +38,7 @@ Docker basics cheats
 	$ docker start [CONTAINER]                      # starts a stopped container
 	$ docker attach [CONTAINER]				        # attaches to a running container
 
-	$ docker run --name fuzzy -d ubuntu /bin/bash   # runs container in background as daemon
+	$ docker run --name cat -d ubuntu /bin/bash     # runs container in background as daemon
 	$ docker stop [CONTAINER]                       # stops running container using SIGTERM
 	$ docker kill [CONTAINER]                       # stops running container using SIGKILL
 
