@@ -1,8 +1,28 @@
-Docker cheats
-=============
+Docker basics cheats
+====================
+
+#### Informational
+
+test the installation by connecting to client:
+
+	$ docker info
 
 
-<h4>Docker Commands:</h4>
+#### boot2docker Basics
+
+start the boot2docker VM:
+
+	$ boot2docker start
+
+find IP address:
+
+	$ boot2docker ip
+
+or
+
+	$ echo $DOCKER_HOST
+
+
 <pre>
 docker images   #lists all images 
 docker ps   #lists running docker processes
