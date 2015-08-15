@@ -1,56 +1,44 @@
 Docker basics cheats
 ====================
 
-#### Informational
+#### Informational:
 
 	$ docker info          # test install and gather info
+	$ docker ps            # lists all running containers
+	$ docker ps -a 		   # lists all containers running or not
+	$ docker ps -l 		   # shows the last container that was run
+	$ docker images		   # lists all of the images available
 
-#### boot2docker Basics
+
+#### boot2docker Basics:
 
 	$ boot2docker start    # starts the boot2docker VM
 	$ boot2docker ip       # find IP address VM uses 
 	$ echo $DOCKER_HOST    # print out environment variable for IP
 
-<pre>
-docker images   #lists all images 
-docker ps   #lists running docker processes
-docker ps -l  #lists all containers running or not
-docker ps -a  #lists all containers running or not
-</pre>
 
-<h4>Container Commands:</h4>
-<pre>
-docker stop <container-id>
-docker run <container-id>
-docker rm <container-id> #remove
-</pre>
+#### Flags:
 
-<h4>Launching & Interacting with Containers:</h4>
-<pre>
-sudo docker run -i -t ubuntu /bin/bash #interactive tty shell 
-sudo docker run -d -t -p 80:80 ubuntu /start.sh #run daemonized and expose port 80
-</pre>
+	-i: keeps STDIN	open
+	-t: assigns a tty to the container for interactive shell
 
-<h4>Committing:</h4>
-<pre>
-docker commit 36e9e0129149 ubuntu-test  #commits container to image
-</pre>
 
-<h4>Logging:</h4>
-<pre>
-docker logs container_name
-docker logs -f container_name   #similar to tail -f
-docker top container_id   #shows running processes in container
-</pre>
+#### Basic Commands:
 
-<h4>Ports:</h4>
-<pre>
-docker port container_name port_number   #shows process id associated with a port
-</pre>
+	$ docker run -i -t ubuntu /bin/bash		        # creates a container with ubuntu base image
+											        # launches an interactive bash shell
+	$ docker run -i -t --name cat ubuntu /bin/bash	# names the container 'cat'
 
-<h4>Destructive Commands:</h4>
-<pre>
-sudo docker ps -a -q | sudo xargs docker rm   #removes all containers
-docker rmi image_id   #removes single image
-sudo docker rmi `sudo docker images -q`   #removes all images
-</pre>
+	$ docker create -i -t ubuntu /bin/bash			# creates the container but does not launch it							        
+	$ docker start [CONTAINER_NAME]                 # starts a stopped container
+	$ docker attach [CONTAINER_NAME]				# attaches to a running container
+
+	$ docker run --name fuzzy -d ubuntu /bin/bash   # runs container in background as daemon
+	$ docker stop [CONTAINER_NAME]                  # stops running container
+
+
+#### Logging:
+
+	$ docker logs [CONTAINER_NAME] 		# fetches logs of the running container
+	$ docker logs -f [CONTAINER_NAME]	# monitors logs in real time
+
