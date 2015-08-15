@@ -31,11 +31,13 @@ unordered lists:
 	* three
 
 or
+
 	+ one
 	+ two
 	+ three
 
 or
+
 	- one
 	- two
 	- three
@@ -56,19 +58,23 @@ combination lists:
 #### Emphasis:
 
 italics:
+
 	*cats*
 	_dogs_
 
 bold: 
+
 	**cats**
 	__dogs__
 
 strikeout:
+
 	~~dogs~~ are better than cats
 
 #### Various formatting
 
 horizontal rule:
+
 	*** or more 
 	--- or more 
 	___ or more 
@@ -79,9 +85,11 @@ horizontal rule:
 preformatted: indent or 4 spaces
 
 inline code: 
+
 	`some code`
 
 syntax highlighting: 
+
 	``` python
 	some code
 	```
