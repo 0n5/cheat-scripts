@@ -96,6 +96,8 @@ syntax highlighting:
 
 #### Links:
 
+inline links:
+
 	[Google](https://www.google.com)
 
 
