@@ -34,35 +34,36 @@ Docker basics cheats
 											        # launches an interactive bash shell
 	$ docker run -i -t --name cat ubuntu /bin/bash	# names the container 'cat'
 
-	$ docker create -i -t ubuntu /bin/bash			# creates the container but does not launch it							        
-	$ docker start [CONTAINER_NAME]                 # starts a stopped container
-	$ docker attach [CONTAINER_NAME]				# attaches to a running container
+	$ docker create -i -t ubuntu /bin/bash			# creates the container but does not launch it						        
+	$ docker start [CONTAINER]                      # starts a stopped container
+	$ docker attach [CONTAINER]				        # attaches to a running container
 
 	$ docker run --name fuzzy -d ubuntu /bin/bash   # runs container in background as daemon
-	$ docker stop [CONTAINER_NAME]                  # stops running container using SIGTERM
-	$ docker kill [CONTAINER_NAME]                  # stops running container using SIGKILL
+	$ docker stop [CONTAINER]                       # stops running container using SIGTERM
+	$ docker kill [CONTAINER]                       # stops running container using SIGKILL
 
-	$ docker rm [CONTAINER_NAME]                    # deletes a container
+	$ docker rm [CONTAINER]                         # deletes a container
 	$ docker rm `docker ps -a -q`					# cheat to delete all containers
 
 #### Running Processes:
 
-	$ docker exec -d [CONTAINER_NAME] touch /home/new_file   # will create a new empty inside the container
-															 # runs touch in the background
-	$ docker exec -t -i [CONTAINER_NAME] /bin/bash           # will open shell inside the container
+	$ docker exec -d [CONTAINER] touch new_file   # will create a new empty inside the container
+											      # runs touch in the background
+	$ docker exec -t -i [CONTAINER] /bin/bash     # will open shell inside the container
 
 
 #### Logging:
 
-	$ docker logs [CONTAINER_NAME] 		# fetches logs of the running container
-	$ docker logs -f [CONTAINER_NAME]	# monitors logs in real time
-	$ docker top [CONTAINER_NAME]       # inspects the running processes of running container
-	$ docker stats [CONTAINER_NAME]     # shows CPU, memory i/o etc of running container
+	$ docker logs [CONTAINER] 		# fetches logs of the running container
+	$ docker logs -f [CONTAINER]	# monitors logs in real time
+	$ docker top [CONTAINER]        # inspects the running processes of running container
+	$ docker stats [CONTAINER]      # shows CPU, memory i/o etc of running container
 
 #### Container Inspection:
 
-	$ docker inspect [CONTAINER_NAME]                                # returns all info about the container 
-	$ docker inspect --format '{{ .Config.Image}}' [CONTAINER_NAME]  # queries container and returns specific results
+	$ docker inspect [CONTAINER]                                # returns all info about the container 
+	$ docker inspect --format '{{ .Config.Image}}' [CONTAINER]  # queries container
+																# returns specific results
 
 
 
