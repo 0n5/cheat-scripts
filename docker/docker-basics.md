@@ -3,21 +3,13 @@ Docker basics cheats
 
 #### Informational
 
-test the installation by connecting to client:
-
-	$ docker info
-
+	$ docker info          # test install and gather info
 
 #### boot2docker Basics
 
-	start the boot2docker VM: $ boot2docker start
-
-find IP address: 
-
-	$ boot2docker ip
-	or
-	$ echo $DOCKER_HOST
-
+	$ boot2docker start    # starts the boot2docker VM
+	$ boot2docker ip       # find IP address VM uses 
+	$ echo $DOCKER_HOST    # print out environment variable for IP
 
 <pre>
 docker images   #lists all images 
