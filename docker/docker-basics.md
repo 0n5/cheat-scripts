@@ -21,6 +21,11 @@ Docker basics cheats
 
 	-i: keeps STDIN	open
 	-t: assigns a tty to the container for interactive shell
+	-d: runs as a background daemon
+
+	--name:                   names the container
+	--restart=always:         container will restart everytime no matter what
+	--restart=on-failure:5    will try to restart a max # of 5 times if non zero exit code
 
 
 #### Basic Commands:
@@ -34,11 +39,31 @@ Docker basics cheats
 	$ docker attach [CONTAINER_NAME]				# attaches to a running container
 
 	$ docker run --name fuzzy -d ubuntu /bin/bash   # runs container in background as daemon
-	$ docker stop [CONTAINER_NAME]                  # stops running container
+	$ docker stop [CONTAINER_NAME]                  # stops running container using SIGTERM
+	$ docker kill [CONTAINER_NAME]                  # stops running container using SIGKILL
+
+	$ docker rm [CONTAINER_NAME]                    # deletes a container
+	$ docker rm `docker ps -a -q`					# cheat to delete all containers
+
+#### Running Processes:
+
+	$ docker exec -d [CONTAINER_NAME] touch /home/new_file   # will create a new empty inside the container
+															 # runs touch in the background
+	$ docker exec -t -i [CONTAINER_NAME] /bin/bash           # will open shell inside the container
 
 
 #### Logging:
 
 	$ docker logs [CONTAINER_NAME] 		# fetches logs of the running container
 	$ docker logs -f [CONTAINER_NAME]	# monitors logs in real time
+	$ docker top [CONTAINER_NAME]       # inspects the running processes of running container
+	$ docker stats [CONTAINER_NAME]     # shows CPU, memory i/o etc of running container
+
+#### Container Inspection:
+
+	$ docker inspect [CONTAINER_NAME]                                # returns all info about the container 
+	$ docker inspect --format '{{ .Config.Image}}' [CONTAINER_NAME]  # queries container and returns specific results
+
+
+
 
