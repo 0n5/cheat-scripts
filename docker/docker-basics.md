@@ -10,17 +10,9 @@ test the installation by connecting to client:
 
 #### boot2docker Basics
 
-start the boot2docker VM:
-
-	$ boot2docker start
-
-find IP address:
-
-	$ boot2docker ip
-
-or
-
-	$ echo $DOCKER_HOST
+start the boot2docker VM:       `$ boot2docker start`
+find IP address:                `$ boot2docker ip`
+print IP environment variable:  `$ echo $DOCKER_HOST`
 
 
 <pre>
