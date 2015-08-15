@@ -1,6 +1,13 @@
 Docker basics cheats
 ====================
 
+#### boot2docker Basics:
+
+	$ boot2docker start    # starts the boot2docker VM
+	$ boot2docker ip       # find IP address VM uses 
+	$ echo $DOCKER_HOST    # print out environment variable for IP
+
+
 #### Informational:
 
 	$ docker info          # test install and gather info
@@ -8,13 +15,6 @@ Docker basics cheats
 	$ docker ps -a 		   # lists all containers running or not
 	$ docker ps -l 		   # shows the last container that was run
 	$ docker images		   # lists all of the images available
-
-
-#### boot2docker Basics:
-
-	$ boot2docker start    # starts the boot2docker VM
-	$ boot2docker ip       # find IP address VM uses 
-	$ echo $DOCKER_HOST    # print out environment variable for IP
 
 
 #### Flags:
