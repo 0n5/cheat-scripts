@@ -10,11 +10,25 @@ Docker basics cheats
 
 #### Informational:
 
-	$ docker info          # test install and gather info
-	$ docker ps            # lists all running containers
-	$ docker ps -a 		   # lists all containers running or not
-	$ docker ps -l 		   # shows the last container that was run
-	$ docker images		   # lists all of the images available
+	$ docker info           # test install and gather info
+	$ docker ps             # lists all running containers
+	$ docker ps -a 		    # lists all containers running or not
+	$ docker ps -l 		    # shows the last container that was run
+	$ docker images		    # lists all of the images available
+	$ docker search [image] # searches for images availabe in docker hub 
+
+#### Repositories: 
+
+	$ docker pull ubuntu:14.04  	# will pull down Ubuntu 14.04
+
+
+#### Docker Hub:
+
+	$ docker login                             # logs in to the docker hub
+	$ docker commit [ID] [REPOSITORY/IMAGE     # commits to docker hub 
+	
+	$ docker commit -m "New Image" -a "Author" [ID] [REPOSITORY/IMAGE]:tag  
+											   # adds message, author and tag 	
 
 
 #### Flags:
