@@ -53,4 +53,4 @@ Dockerfile basics cheats
       -f /[PATH_TO_FILE]						 # looks for dockerfile at a certain path
 
     $ docker build --no-cache \
-     -t ="[REPOSITORY/IMAGE]" .                  # builds without using the cahced layers
+     -t ="[REPOSITORY/IMAGE]" .                  # builds without using the cached layers
