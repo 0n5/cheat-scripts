@@ -1,13 +1,40 @@
 Javascript algorithm cheats
 ===========================
 
+
+#### Reverse a String
+
+``` javascript
+function reverseString(str) {
+  return str.split('').reverse().join('');
+}
+
+reverseString('hello');
+```
+
+#### Find the Factorial of a Number
+
+```javascript
+function factorialize(num) {
+  if (num === 0) {
+   return 1;
+  } else {
+    
+  return num * factorialize(num-1);
+}  
+  }
+  
+factorialize(5);
+```
+
+
 #### Find Longest Word in String:
 
 
 ``` javascript
 function findLongestWord(str) {
   var longestArray = str.match(/\w[a-z]{0,}/gi);
-  	// string.match() uses regex to create array of matches
+    // string.match() uses regex to create array of matches
   var word = longestArray[0];
 
   for(i=1; i<longestArray.length; i++) {
