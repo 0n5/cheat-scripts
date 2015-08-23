@@ -9,7 +9,7 @@ function reverseString(str) {
   return str.split('').reverse().join('');
 }
 
-reverseString('hello');
+alert(reverseString('hello'));
 ```
 
 #### Find the Factorial of a Number
@@ -24,7 +24,7 @@ function factorialize(num) {
 }  
   }
   
-factorialize(5);
+alert(factorialize(5));
 ```
 
 
