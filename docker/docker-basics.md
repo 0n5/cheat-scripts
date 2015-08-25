@@ -33,6 +33,9 @@ Docker basics cheats
 											   # adds message, author and tag
     $ docker inspect [REPOSITORY/IMAGE]:tag    # returns info about image
 
+    $ docker push [REPOSITORY/IMAGE]           # pushes the repo to docker hub
+    										   # doesnt work for automatic builds!
+
 
 #### Flags:
 
@@ -44,6 +47,7 @@ Docker basics cheats
 	-w: overrides the working directory set in dockerfile
 	-e: passes environment variables during 'docker run'
 	-u: overrides the user specified in dockerfile
+	-v: creates a volume in the container from a dir on the localhost
 
 	--name:                   names the container
 	--restart=always:         container will restart everytime no matter what
@@ -62,12 +66,23 @@ Docker basics cheats
 	$ docker attach [CONTAINER]				        # attaches to a running container
 
 	$ docker run --name cat -d ubuntu /bin/bash     # runs container in background as daemon
+	$ docker run -d -p 80 --name cat \   			# creates container with a volume 
+	  -v $PWD:/var/www/html [REPOSITORY/IMAGE]      # specifies source and destination
+    
+    $ docker run -d -p 80 --name cat \   			# specifies that destination is read only 
+	  -v $PWD:/var/www/html:ro [REPOSITORY/IMAGE]  
+
+	$ docker run -d -p 80 --name cat \   			# specifies that destination is read/write
+	  -v $PWD:/var/www/html:rw [REPOSITORY/IMAGE]   
 
 	$ docker stop [CONTAINER]                       # stops running container using SIGTERM
 	$ docker kill [CONTAINER]                       # stops running container using SIGKILL
 
 	$ docker rm [CONTAINER]                         # deletes a container
 	$ docker rm `docker ps -a -q`					# cheat to delete all containers
+	$ docker rmi [REPOSITORY/IMAGE]                 # deletes an image
+	$ docker rmi `docker images -a -q`              # cheat to delete all images
+
 
 #### Running Processes:
 

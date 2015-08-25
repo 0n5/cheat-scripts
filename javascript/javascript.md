@@ -52,3 +52,57 @@ function findLongestWord(str) {
 
 alert(findLongestWord('The quick brown fox jumped over the lazy dog'));
 ```
+
+
+#### Capitalize 1st letter of each word
+
+``` javascript
+function titleCase(str) {
+ 
+    return str.replace(/\w\S*/g, function(txt) {
+      // string.replace() matches string with a regex pattern as first parameter
+      // regex pattern is any word, without whitespace
+
+        return txt.charAt(0).toUpperCase()+ txt.substr(1).toLowerCase();
+      
+      });
+          // replaces the first parameter with result of a function
+          // function changes 0th index to uppercase
+          // concats and lowercases the 1th and on, to the new string
+
+}
+
+alert(titleCase("I'm a little tea pot"));
+```
+
+#### Return array containing largest numbers from multi-d array
+
+``` javascript
+function largestOfFour(arr) {
+  
+    return arr.map(function(sub) {
+    return Math.max.apply(null, sub);
+  });
+}
+
+largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
+
+
+#### Return array containing largest numbers from multi-d array
+
+Iteratively:
+
+```javascript
+function largestOfFour(arr) {
+
+var newArray = [];
+for (var i = 0; i < arr.length; i++) {
+    newArray.push(Math.max.apply(Math, arr[i]));
+  }
+  return newArray;
+}
+
+alert(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]));
+
+```
+
