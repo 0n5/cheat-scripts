@@ -1,76 +1,56 @@
 Git command cheats
 ================================
 
-<h4>Install</h4>
-<pre>
-$ apt-get install git
-</pre>
+#### Install
+
+	$ apt-get install git
 
 
-<h4>Identity Configuration:</h4>
-<pre>
-$ git config --global user.name your_username
-$ git config --global user.email your_email address
-$ git config --global credential.helper "cache --timeout=3600"
-</pre>
+#### Configuration
 
-<h4>View username and email</h4>
-<pre>
-$ git config user.name
-$ git config user.email
-</pre>
+	$ git config --global user.name your_username
+	$ git config --global user.email your_email address
+	$ git config --global credential.helper "cache --timeout=3600"
 
-<h4>HTTPS Remote Origin:</h4>
-<pre>
-# adding remote origin
-$ git remote add origin https://github.com/user/repo.git
+#### View username and email
 
-# reset remote origin
-$ git remote set-url origin https://github.com/user/repo.git
+	$ git config user.name
+	$ git config user.email
 
-# view remotes
-$ git remote -v
-</pre>
+#### HTTPS Remote Origin
 
-<h4>Cloning</h4>
-<pre>
-# clone into directory
-$ git clone https://github.com/repo.git /opt/repo-folder
-# clone with HTTPS
-$ git clone https://github.com/username/repo.git
-# clone with SSH
-$ git clone git@github.com:username/repo.git
-</pre>
+	$ git remote add origin https://github.com/user/repo.git      # add remote origin
+	$ git remote set-url origin https://github.com/user/repo.git  # reset remote origin
+	$ git remote -v                                               # view remote origins
 
-<h4>Push</h4>
-<pre>
-$ git add --all # or git add .
-$ git commit -m "first"
-$ git push
-</pre>
+
+#### Cloning repositories (HTTPS)
+
+	$ git clone https://github.com/username/repo.git
+
+#### Cloning repositories (SSH)
+
+	$ git clone git@github.com:username/repo.git
+
+#### Clone raw GitHub content 
+
+	$ curl -o https://raw.githubusercontent.com/username/path_to_file /output_path
+
+#### Push
+
+	$ git add --all # or git add .   # adds everything in current path
+	$ git add [file]                 # adds only the specific file 
+	$ git commit -m "first"
+	$ git push
  
-<h4>Pull changes</h4>
-<pre>
-$ git pull origin master
-</pre>
+#### Pull changes 
 
-<h4>Clone raw GitHub content</h4>
-<pre>
-$ curl -o https://raw.githubusercontent.com/username/path_to_file /output_path
-</pre>
+	$ git pull origin master
 
-<h4>Resync .gitignore</h4>
-<pre>
-$ git rm -r --cached
-$ git add --all # or git add .
-$ git commit -m "resync"
-$ git push
-</pre>
+#### Resync .gitignore
 
-<h4>Push Default message</h4>
-<pre>
-# gets rid of simple push error message
-$ git config --global push.default simple
-</pre>
-
+	$ git rm -r --cached
+	$ git add --all # or git add .
+	$ git commit -m "resync"
+	$ git push
 
