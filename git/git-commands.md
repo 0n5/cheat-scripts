@@ -38,8 +38,9 @@ Git command cheats
 
 #### Push
 
-	$ git add --all # or git add .   # adds everything in current path
-	$ git add [file]                 # adds only the specific file 
+	$ git add --all           # adds everything in current path
+	$ git add .               # adds everything in current path
+	$ git add [file]          # adds only the specific file 
 	$ git commit -m "first"
 	$ git push
  
