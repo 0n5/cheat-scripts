@@ -22,7 +22,7 @@ Edit the file:
 
 Exit and save the file.
 
-	$ service ssh restart
+	$ # /etc/init.d/ssh restart
 	$ exit
 
 To login:
