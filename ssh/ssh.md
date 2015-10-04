@@ -52,7 +52,8 @@ To log in:
 
 Edit this line to say:	
     
-    PermitRootLogin without-password
+    PasswordAuthentication no
+    ChallengeResponseAuthentication no
 
 Exit and save file.
 
