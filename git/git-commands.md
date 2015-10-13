@@ -23,6 +23,12 @@ Git command cheats
 	$ git remote set-url origin https://github.com/user/repo.git  # reset remote origin
 	$ git remote -v                                               # view remote origins
 
+#### SSH Remote Origin
+
+	$ git remote add production ssh://[USER]@[HOST]/PATH/TO/TARGET/DIRECTORY/
+	or if using non standard SSH port
+	$ git remote add production ssh://[USER]@[HOST]:[SSH_PORT]/PATH/TO/TARGET/DIRECTORY/
+
 
 #### Cloning repositories (HTTPS)
 
