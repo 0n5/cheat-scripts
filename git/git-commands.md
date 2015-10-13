@@ -26,7 +26,7 @@ Git command cheats
 #### SSH Remote Origin
 
 	$ git remote add production ssh://[USER]@[HOST]/PATH/TO/TARGET/DIRECTORY/
-	or if using non standard SSH port
+	or (if using non standard SSH port):
 	$ git remote add production ssh://[USER]@[HOST]:[SSH_PORT]/PATH/TO/TARGET/DIRECTORY/
 
 
