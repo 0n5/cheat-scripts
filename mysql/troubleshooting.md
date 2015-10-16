@@ -1,4 +1,4 @@
-mysql troubleshooting cheats
+MySQL troubleshooting cheats
 ============================
 
 #### Workflow
