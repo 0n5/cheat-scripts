@@ -25,6 +25,8 @@ Files are installed in the cellar
 
 
 #### Brewfiles
+
+Must be admin/root
 	
 	$ brew tap Homebrew/bundle
 	$ nano Brewfile
