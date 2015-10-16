@@ -1,15 +1,13 @@
 SSH cheats
 =======================
 
-#### Create key pair</h4>
+#### Create key pair
 
-	$ ssh-keygen -t rsa         # generates a key pair
-	$ less ~/.ssh/id_rsa.pub    # print the public key to the screen
-
+	$ ssh-keygen -t rsa    # generates a key pair
 
 #### Change standard SSH port
 	
-	$ cp /etc/ssh/sshd_config /etc/ssh/sshd_config_backup   #create back up of config file
+	$ cp /etc/ssh/sshd_config /etc/ssh/sshd_config_backup   # create back up of config file
 	$ nano /etc/ssh/sshd_config
 
 Edit the file:
@@ -22,8 +20,7 @@ Edit the file:
 
 Exit and save the file.
 
-	$ # /etc/init.d/ssh restart
-	$ exit
+	$ sudo service ssh restart
 
 To login:
 
@@ -57,10 +54,7 @@ Edit this line to say:
 
 Exit and save file.
 
-	$ ssh reload 
-
-
-
+	$ sudo service ssh restart
 
 
 
