@@ -93,7 +93,7 @@ enter pwd
 or 
 
 	$ /etc/init.d/mysql stop   
-	$ mysqld_safe --skip-grant-tables &   #start mysql in safe mode
+	$ mysqld_safe --skip-grant-tables  # start in safe mode
 
 	> mysql -u root -p
 
