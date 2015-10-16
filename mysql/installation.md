@@ -1,9 +1,8 @@
-Mysql installation cheats
-=========================
+Mysql installation
+==================
 
-<h4>Install</h4>
-<pre>
-$ apt-get update
-$ apt-get install mysql-server libapache2-mod-auth-mysql php5-mysql mysql-client
-</pre>
+#### Install for LAMP stack
+
+	$ apt-get update
+	$ apt-get install mysql-server libapache2-mod-auth-mysql php5-mysql mysql-client
 
