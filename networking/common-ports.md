@@ -3,7 +3,7 @@ Complete Ports List
 
 #### Well Known Ports
 
-[same list as Wikipedia Page(https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers)
+[same list as Wikipedia Page](https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers)
 
 	0	N/A	N/A	In programming APIs (not in communication between hosts), requests a system-allocated (dynamic) port
 	0		UDP	Reserved	
