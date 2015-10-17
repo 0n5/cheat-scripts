@@ -281,7 +281,7 @@ Complete Ports List
 
 #### Registered ports
 
-[same list as Wikipedia Page(https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers)
+[same list as Wikipedia Page](https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers)
 
 	Port	TCP	UDP	Description	Status
 	1025	TCP		NFS	
