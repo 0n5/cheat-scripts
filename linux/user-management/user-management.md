@@ -40,7 +40,7 @@ $ su [USERNAME]   #change to another user
 	$ usermod -G [GROUPNAME] [USERNAME]        # adds user to group or changes current group
 	$ usermod -G [GROUP1],[GROUP2] [USERNAME]  # adds user to two groups
 	$ usermod -a  -G [GROUP] [USERNAME]        # adds user to group in addition to current group
-	$ groups   #prints out current users group
+	$ groups                                   # prints out current users group
 
 #### Add to Sudoers
 
