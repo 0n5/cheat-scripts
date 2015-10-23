@@ -12,7 +12,7 @@ Install commmand line tools:
 
 #### Installation:
 
-	$ echo "gem: --no-document" >> ~/.gemrc
+	$ echo "gem: --no-document" >> ~/.gemrc   # do not install gem docs
 	$ \curl -sSL https://get.rvm.io | bash -s stable
 
 Add path to bash_profile (if not already there):
@@ -24,26 +24,24 @@ Reload the profile:
     $ source ~/.bash_profile
 
 
-#### Using RVM
+#### Finding Ruby Versions & gems
 
 	$ rvm list
 	$ rvm list gemsets
-
-	$ rvm system        # fallback to using system installed ruby
-	$ rvm user 2.x.x    # use RVM ruby  
-
+	$ rvm list known
 
 #### Installing Ruby version
 
 	$ su [ADMIN_USER]
 	$ rvm install 2.x.x
 
-
-#### Using Ruby Version
+#### Using Ruby Versions
 
 	$ su [ADMIN_USER]
 	$ bash --login
-	$ rvm use 2.x.x
+
+	$ rvm use 2.x.x    # use RVM ruby  
+	$ rvm system       # fallback to using system installed ruby
 
 
 #### Remove RVM
