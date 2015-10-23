@@ -1,11 +1,13 @@
-Jekyll cheats
-=============
+Jekyll
+======
 
-<h4>Install:</h4>
-<pre>
-$ rvm use 2.1.0
-$ gem install jekyll
-</pre>
+#### Installation
+
+Install XCode Command Line Tools, Homebrew & RVM first
+
+	$ rvm use 2.x.x
+	$ gem install jekyll
+
 
 <h4>Configure yaml file:</h4>
 <pre>
