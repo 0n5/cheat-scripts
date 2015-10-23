@@ -24,7 +24,7 @@ Reload the profile:
     $ source ~/.bash_profile
 
 
-#### Finding Ruby Versions & gems
+#### Finding Ruby versions & gems
 
 	$ rvm list
 	$ rvm list gemsets
@@ -35,7 +35,7 @@ Reload the profile:
 	$ su [ADMIN_USER]
 	$ rvm install 2.x.x
 
-#### Using Ruby Versions
+#### Using Ruby versions
 
 	$ su [ADMIN_USER]
 	$ bash --login
