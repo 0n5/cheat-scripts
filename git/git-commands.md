@@ -11,6 +11,8 @@ Git command cheats
 	$ git config --global user.name your_username
 	$ git config --global user.email your_email address
 	$ git config --global credential.helper "cache --timeout=3600"
+	
+	$ git config core.fileMode false    # git will not track chmod 
 
 #### View username and email
 
