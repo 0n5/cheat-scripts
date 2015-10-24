@@ -93,6 +93,7 @@ add to the head:
 
 	&lt;link rel="stylesheet" href="{{ site.url }}/css/bootstrap.css&gt;
 
+save and exit
 
 	$ nano _includes/footer.html 
 	
