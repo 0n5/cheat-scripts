@@ -3,6 +3,8 @@ RVM (ruby version manager)
 
 RVM cheat sheet (official): [http://cheat.errtheblog.com/s/rvm](http://cheat.errtheblog.com/s/rvm)
 
+### OSX
+
 #### Requirements
 
 Install commmand line tools:
