@@ -102,6 +102,7 @@ add to the file:
 	&lt;script src="{{ site.url }}/js/bootstrap.js"&gt;&lt;/script&gt;
 	&lt;script src="http://code.jquery.com/jquery-1.xx.x.min.js"&gt;&lt;/script&gt;
 
+save and exit
 
 #### Font Awesome
 
@@ -120,6 +121,7 @@ add to the head:
 
 	&lt;link href="//netdna.bootstrapcdn.com/font-awesome/4.x.x/css/font-awesome.css" rel="stylesheet"&gt;
 
+save and exit
 
 #### Troubleshooting
 
