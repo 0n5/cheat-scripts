@@ -13,7 +13,6 @@ Workflow
 * check DirectoryIndex path is correct in Virtualhost config file
 * does Apache have correct permissions to serve files?
 * is .htaccess file being used and is it overriding settings?
-* is mysql running?
 
 #### Restart Service
 
