@@ -1,77 +1,51 @@
-Apache troubelshooting cheats
-=============================
+Apache troubelshooting
+======================
 
-workflow:<br>
-check logs at /var/log<br>
-is apache installed?<br>
-is apache running?<br>
-check for syntax and config errors with automatic tools<br>
-are ports open?<br>
-is DNS configured properly<br>
-check DocumentRoot path is correct in Virtualhost config file<br>
-check DirectoryIndex path is correct in Virtualhost config file<br>
-does Apache have correct permissions to serve files?<br>
-is .htaccess file being used and is it overriding settings?<br>
-is mysql running?<br>
+Workflow 
 
-<h4>Service</h4>
-<pre>
-$ service apache2 restart   #restart ubuntu
-$ service httpd restart   #restart rhel
+* check logs
+* is Apache installed?
+* is Apache running?
+* check for syntax and config errors with automatic tools
+* are ports open?
+* is DNS configured properly
+* check DocumentRoot path is correct in Virtualhost config file
+* check DirectoryIndex path is correct in Virtualhost config file
+* does Apache have correct permissions to serve files?
+* is .htaccess file being used and is it overriding settings?
+* is mysql running?
 
-$ service apache2 reload  #reload ubuntu
-$ service httpd reload  #reload rhel
-</pre>
+#### Restart Service
 
-<h4>Logging</h4>
-<pre>
-$ tail -f /var/log/apache2/error.log   #check apache error logs; ubuntu
-$ tail -f /var/log/httpd/error_log   #check apache error logs; rhel
+	$ service apache2 restart   # restart ubuntu
+	$ service httpd restart     # restart rhel
 
-$ tail -f /var/log/apache2/access.log   #check apache access logs; ubuntu
-$ tail -f /var/log/httpd/access_log   #check apache access logs; rhel
-</pre>
+	$ service apache2 reload    # reload ubuntu
+	$ service httpd reload      # reload rhel
 
-<h4>Debugging</h4>
-<pre>
-$ apachectl -t   #automatic syntax checker  ubuntu
-$ httpd -t   #automatic syntax checker   rhel
+#### Logging
 
-$ apachectl configtest   #auto config file checker ubuntu
+	$ tail -f /var/log/apache2/error.log   # log errors in real time; ubuntu
+	$ tail -f /var/log/httpd/error_log     # log errors in real time; rhel
 
-$ apache2ctl -S    #checks virtualhost settings; ubuntu
-$ httpd -S    #checks virtualhost settings; rhel
-
-$ nano /etc/apache2/apache2.conf
-# edit the file and change "LogLevel" to debug
-$ service apache2 restart
-</pre>
+	$ tail -f /var/log/apache2/access.log  # log server access in real time; ubuntu
+	$ tail -f /var/log/httpd/access_log    # log server access in real time; rhel
 
 
-<h4>Check if processes are running</h4>
-<pre>
-$ netstat -plunt | grep apache2
-$ netstat -plunt | grep httpd
-</pre>
+#### Debugging
 
-<h4>Check if ports are running</h4>
-<pre>
-$ nc -z your_ip_address 80
-$ nc -z your_ip_address 443
-</pre>
+	$ apachectl -t           # automatic syntax checker  ubuntu
+	$ httpd -t               # automatic syntax checker   rhel
 
-<h4>Check DNS</h4>
-<pre>
-$ host -t A yoursite.com
-</pre>
+	$ apachectl configtest   # auto config file checker ubuntu
 
-<h4>Check permissions</h4>
-<pre>
-$ ls -al /var/www/yourrsite.com
-</pre>
+	$ apache2ctl -S          # checks virtualhost settings; ubuntu
+	$ httpd -S    		     # checks virtualhost settings; rhel
 
-<h4>check mysql</h4>
-<pre>
-$ netstat -plunt | grep mysql 
+	$ netstat -plunt | grep apache2  # check if apache process is running; ubuntu
+	$ netstat -plunt | grep httpd    # check if apache process is running; rhel
 
-</pre>
+	$ nc -z -v your_ip_address 80    # netcat port scan HTTP
+	$ nc -z -v your_ip_address 443   # netcat port scan HTTPS
+
+	$ host -t A yoursite.com         # check DNS resolution
