@@ -1,4 +1,4 @@
-lnk_parser
+lnk-parser
 ==========
 
 #### Installation
