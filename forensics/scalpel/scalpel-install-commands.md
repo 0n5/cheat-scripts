@@ -1,20 +1,28 @@
 Scalpel cheats
 ==============
 
-<h4>Install:</h4>
-<pre>
-$ apt-get install scalpel
-</pre>
+#### Installation
 
-<h4>Usage:</h4>
-<pre>
-# edit config file and uncoment extension type to look for:
-$ nano /etc/scalpel/scalpel.conf
-</pre>
+	$ apt-get install scalpel
 
-<h4>Workflow:</h4>
-<pre>
-$ blkls -a image-name &gt; output-image	#carve out unallocated space and saved it to an output image
-$ scalpel -c scalpel.conf recovered output-image	#take output image and run scalpel on it
-</pre>
+#### Configuration
 
+	$ nano /etc/scalpel/scalpel.conf
+
+edit config file and uncoment extension type to look for:
+
+	# GIF and JPG files (very common)
+	#      gif     y       5000000         \x47\x49\x46\x38\x37\x61        \x00\x3b
+	#      gif     y       5000000         \x47\x49\x46\x38\x39\x61        \x00\x3b
+	       jpg     y       200000000       \xff\xd8\xff\xe0\x00\x10        \xff\xd9
+	
+
+#### Carve out unallocated space
+
+	$ apt-get install sleuthkit
+	$ blkls -a [IMAGE] > [OUTPUT_IMAGE]
+
+
+#### Carve files
+
+	$ scalpel [IMAGE] -o [OUTPUT_DIR]
