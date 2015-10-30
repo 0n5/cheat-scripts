@@ -1,5 +1,5 @@
-Javascript algorithm cheats
-===========================
+Javascript algorithm
+====================
 
 
 #### Reverse a String

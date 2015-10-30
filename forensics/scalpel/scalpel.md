@@ -1,5 +1,5 @@
-Scalpel cheats
-==============
+Scalpel
+=======
 
 #### Installation
 
