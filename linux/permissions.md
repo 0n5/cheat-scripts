@@ -39,7 +39,7 @@ $ chmod -R 755 directory_name  #changes permissions recursively to directory
 
 
 
-
+$ find /home -perm 777 -exec chmod 555 {}\;   #finds all files with 777 permissions and changes them to 555
 
 
 
