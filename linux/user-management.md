@@ -1,5 +1,5 @@
-Linux user accounts
-===================
+User & Group Account Management
+===============================
 
 #### Account info
 
@@ -12,11 +12,11 @@ Linux user accounts
 
 #### Account switching
 
-$ sudo su         # change to root
-$ sudo -s         # change to root
-$ sudo -i         # change to root
+	$ sudo su         # change to root
+	$ sudo -s         # change to root
+	$ sudo -i         # change to root
 
-$ su [USERNAME]   #change to another user
+	$ su [USERNAME]   #change to another user
 
 
 #### User maintenance

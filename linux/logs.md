@@ -1,8 +1,6 @@
 Logging
 =======
 
-#### Usage
-
 	$ tail -n 20 /var/log/cron   # prints out the last 20 lines of the cron file
 	$ tail -f /var/log/cron      # monitors log file in real time
 
@@ -14,3 +12,5 @@ Logging
 		# searches the stdout for 'BREAK-IN'
 	$ cat [OUTPUT] | grep fail | grep authentication  
 		# cats the log file and pipes one grep stdout to another
+
+	$ cat /etc/*syslog*.conf | grep -v “^#”   # prints list of log files

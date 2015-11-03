@@ -1,45 +1,38 @@
-Permission management cheats
-============================
+Permissions
+===========
 
-<p>
-to view permissions of a directory execute ls -al or ll<br>
+To view permissions of a directory execute ls -al or ll
 
-d: directory<br>
--: file<br>
-r: read<br>
-w: write<br>
-x: execute<br>
-</p>
+	d     # directory
+	-     # file
+	r     # read
+	w     # write
+	x     # execute
 
-<p>
-1st three lines: owner<br>
-2nd three lines: group<br>
-3rd three lines: world<br>
-</p>
+ 
+	1st character          # its a file or directory 	
+	2nd, 3rd, 4th lines    # owner permissions
+	5th, 6th, 7th lines    # group permissions
+	8th, 9th, 10th lines   # world permissions
 
-<p>
-7: read, write, execute<br>
-6: read, write<br>
-5: read, execute<br>
-4: read<br>
-3: write, execute<br>
-2: write<br>
-1: execute<br>
-0: no permission<br>
-</p>
+	7  # read, write, execute
+	6  # read, write
+	5  # read, execute
+	4  # read
+	3  # write, execute
+	2  # write
+	1  # execute
+	0  # no permission
 
-<h4>Permissions commands</h4>
-<pre>
-$ chmod o+r file_name   #gives world permission to read
-$ chmod o-r file_name   #removes permission to read
+#### chmod
 
-$ chmod 755 file_name   #rwx to owner, rx to group and world
-$ chmod -R 755 directory_name  #changes permissions recursively to directory
-</pre>
+	$ chmod o+r [FILE]   # gives world permission to read
+	$ chmod o-r [FILE]   # removes permission to read
 
+	$ chmod 755 [FILE]   # rwx to owner, rx to group and world
+	$ chmod -R 755 [DIRECTORY]  # changes permissions recursively to directory
 
-
-$ find /home -perm 777 -exec chmod 555 {}\;   #finds all files with 777 permissions and changes them to 555
+	$ chmod +x [FILE]  # makes file executable
 
 
 
