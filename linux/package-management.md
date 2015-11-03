@@ -43,7 +43,7 @@ Installs
 
 	$ dpkg -i [PACKAGE].deb
 
-- If it fails because of dependencies:
+If it fails because of dependencies:
 
 	$ apt-get update
 	$ apt-get upgrade
