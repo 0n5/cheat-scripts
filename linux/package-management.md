@@ -81,15 +81,15 @@ Search
 
 Create
 
-	$ tar cf file.tar [FILES]        # create tar package
-	$ tar czf file.tar.gz [FILES]    # creates tar.gz package
-	$ tar cjf file.tar.bz2 [FILES]   # creates .bz2 package
+	$ tar cf [FILE].tar [FILES]        # create tar package
+	$ tar czf [FILE].tar.gz [FILES]    # creates tar.gz package
+	$ tar cjf [FILE].tar.bz2 [FILES]   # creates .bz2 package
 
 Extract 
 
-	$ tar xf file.tar        # extract tar
-	$ tar xzf file.tar.gz    # extract tar.gz
-	$ tar xjf file.tar.bz2   # extract tar.bz2
+	$ tar xf [FILE].tar        # extract tar
+	$ tar xzf [FILE].tar.gz    # extract tar.gz
+	$ tar xjf [FILE].tar.bz2   # extract tar.bz2
 
 #### Zip
 
