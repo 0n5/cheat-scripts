@@ -34,10 +34,6 @@ or
 
 	$ less /etc/mysql/my.cnf
 
-or (if applicable)
-
-	$ less /etc/mysql/my.ini
-
 if incorrect edit the file using nano and restart service 
 
 
@@ -50,10 +46,6 @@ if incorrect edit the file using nano and restart service
 
 	$ less /etc/mysql/my.cnf
 
-or
-
-	$ less /etc/mysql/my.ini
-
 if bind-address=localhost; edit and add your ip address or delete alltogether and restart
 
 
@@ -61,19 +53,14 @@ if bind-address=localhost; edit and add your ip address or delete alltogether an
 
 	$ less /etc/mysql/my.cnf
 
-or
-
-	$ less /etc/mysql/my.ini
 
 make sure skip-networking is commented out; if not, edit with nano and restart
+
 
 #### Check socket variable
 
 	$ less /etc/mysql/my.cnf
 
-or
-
-	$ less /etc/mysql/my.ini
 
 if socket= /var/lib/mysql/mysqld.sock is set to anything else edit with nano and restart service
 
@@ -114,30 +101,5 @@ login with new credentials
 	$ apt-get remove --purge mysql-server mysql-client mysql-common
 	$ apt-get autoremove
 	$ apt-get autoclean
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
