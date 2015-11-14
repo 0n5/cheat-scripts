@@ -23,8 +23,7 @@ Save and exit.
 	$ service monit reload
 	$ service monit start
 
-Visit [IP_ADDRESS:2812]
-
+Visit [IP_ADDRESS:2812] <br>
 Enter Username and Password from monitrc file
 
 
@@ -47,14 +46,10 @@ Save and exit.
 
 #### Slack Integration
 
-Visit [TEAM].slack.com/services#
-
-Select Configured Integrations
-
-Click Incoming Webhooks
-
-Click Add button
-
+Visit [TEAM].slack.com/services# <br>
+Select Configured Integrations<br>
+Click Incoming Webhooks<br>
+Click Add button<br>
 Notate the Link created
 
 	$ nano slack.rb
