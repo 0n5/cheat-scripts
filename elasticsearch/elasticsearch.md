@@ -24,7 +24,7 @@ Elasticsearch
 
 	$ service elasticsearch start
 
-Make sure port 9200 is open on the firewall
+Make sure port 9200 is open on the firewall <br>
 Visit [IP_ADDRESS:9200] to verify that it is running
 
 
