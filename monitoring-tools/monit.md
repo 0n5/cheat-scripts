@@ -86,7 +86,7 @@ Add to the file:
 	[CHECK_SOMETHING_LINE2]
 	    then exec  /path/to/slack.rb
 
-# if using RVM instead indicate full path to ruby
+if using RVM instead indicate full path to ruby
 
 	[CHECK_SOMETHING_LINE1]
 	[CHECK_SOMETHING_LINE2]
