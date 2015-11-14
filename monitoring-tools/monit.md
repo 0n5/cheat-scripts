@@ -23,8 +23,8 @@ Save and exit.
 	$ service monit reload
 	$ service monit start
 
-*Visit [IP_ADDRESS:2812]
-*Enter Username and Password from monitrc file
+* Visit [IP_ADDRESS:2812]
+* Enter Username and Password from monitrc file
 
 
 #### Elasticsearch monitoring
@@ -46,11 +46,11 @@ Save and exit.
 
 #### Slack Integration
 
-*Visit [TEAM].slack.com/services#
-*Select Configured Integrations
-*Click Incoming Webhooks
-*Click Add button
-*Notate the Link created
+* Visit [TEAM].slack.com/services#
+* Select Configured Integrations
+* Click Incoming Webhooks
+* Click Add button
+* Notate the Link created
 
 	$ nano slack.rb
 
