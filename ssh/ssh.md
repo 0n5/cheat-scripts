@@ -5,6 +5,8 @@ SSH cheats
 
 	$ ssh-keygen -t rsa    # generates a key pair
 
+Copy public key in authorized keys file on server at ~/.ssh
+
 #### Change standard SSH port
 	
 	$ cp /etc/ssh/sshd_config /etc/ssh/sshd_config_backup   # create back up of config file
@@ -29,7 +31,7 @@ To login:
 
 #### SSH config alias
 
-	$ nano .ssh/config
+	$ nano ~/.ssh/config
 
 Add to this file:
 
@@ -55,6 +57,22 @@ Edit this line to say:
 Exit and save file.
 
 	$ sudo service ssh restart
+
+
+#### Disable Root Login
+
+	$ nano /etc/ssh/sshd_config
+
+Change to: 
+
+	PermitRootLogin no
+
+Save and exit. 
+
+	$ sudo service ssh restart
+
+
+
 
 
 

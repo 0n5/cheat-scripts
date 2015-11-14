@@ -37,6 +37,15 @@ Repository Cache
 	$ apt-cache unmet              # prints out unmet dependencies
 
 
+Troubleshooting
+
+E: Could not get lock /var/lib/dpkg/lock - open (11 Resource temporarily unavailable)
+E: Unable to lock the administration directory (/var/lib/dpkg/) is another process using it?  
+
+	$ ps aux | grep apt
+	$ kill [PROCESS_NUMBER]
+	
+
 #### Dpkg
 
 Installs
