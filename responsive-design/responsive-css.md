@@ -34,19 +34,44 @@ HTML:
 
 #### Flex 
 
-Makes child elements try to align to each other without wrapping
+Makes child elements try to align to each other without wrapping<br>
 
 ``` css
 
-#main {
+.container {
 	
 	display: flex;
 	flex-wrap: nowrap;
 }
 
 ```
+	flex-wrap: wrap; # tells browser its ok to wrap to next line
 
 
+#### Button Sizing
+
+``` css
+
+nav a, button {
+	min-width: 48px;
+	min-height: 48px;
+}
+
+```
+
+#### Tables
+
+No more Tables
+
+``` css
+
+thead tr {
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
+}
+
+```
 
 
 

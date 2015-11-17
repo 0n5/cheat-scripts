@@ -4,14 +4,31 @@ Responsive Design
 
 #### Common Settings
 
-	max-width: 960px;
+	* max-width: 960px;
+	* set max-width: 100% for all img, embed, object and video
+	* buttons should be at least 48px by 48px (finger is 40px by 40px)
+	* buttons should have at least 40px of room in between each other
+	* give <a> tags padding: 1.5em
+	* ideal measure is 65 (length of the line of text)
+	* base font should be 16px (1.2em) (increase for text heavy sites)
+
+### DIPs
+
+	1 DIP = 2 hardware pixels
+
 
 #### Meta Tags
 
 	charset: utf8
 	http-equiv="X-UA-Compatible" content="IE=edge"  # ensures best browser possible
 	name="viewport" content="width=device-width, initial-scale=1"
-	
+
+
+#### Responsive Design Types
+
+	* Mostly Fluid (uses margin-left: auto; and margin-right: auto;)
+	* Column Drop
+	* Layout Shifter
 
 #### 12 Column width percentages
 
@@ -37,3 +54,28 @@ Consider:
 	* then semantics (tags)
 	* then images (placeholders)
 	* then visuals (borders, fonts, margins)
+
+Design:
+	
+	* phone
+	* to tablet
+	* to desktop
+
+
+Optimization 
+
+	* open page in devtools
+	* inspect each section and see if it fills up viewport (blue) or not (orange)
+	* change to width: 100%; to fix
+	* find <a> tags and modify for finger size (padding: 1.5em)
+
+#### Do's
+
+	* Use relative positions instead of absolute
+	* use max-width:100% or width:100% instead of px
+
+#### Handling Tables
+
+	* Hidden columns (hide based on importance)
+	* No more tables (display off canvas)
+	* Contained Tables (put inside div and set width to 100%)

@@ -11,6 +11,13 @@ Sites & Tools
 
 [Udacity Style Guide](http://udacity.github.io/frontend-nanodegree-styleguide/)
 
+
+#### Emulation
+
+In Chrome cmd + opt + j<br>
+Click mobile phone icon and select device
+
+
 #### Placeholders
 
 [Placekitten](https://placekitten.com)<br>
@@ -24,3 +31,4 @@ Sites & Tools
 #### Fonts
 
 [Google Fonts](https://www.google.com/fonts)
+
