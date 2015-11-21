@@ -31,9 +31,9 @@ Responsive Images
 
 	* Raster, images represented by grids of individual dots of color)
 	* Vector, sets of lines, curves, fills and gradients (SVG)
-		> browser can render at any size
-		> substantially smaller file
-		> scale without degradation
+		* browser can render at any size
+		* substantially smaller file
+		* scale without degradation
 
 
 #### Image Optimization
