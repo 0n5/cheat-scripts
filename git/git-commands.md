@@ -56,7 +56,15 @@ Git command cheats
 
 	$ git pull origin master
 
-#### Resync .gitignore
+
+#### Git Ignore
+
+Global
+
+	$ git config --global core.excludesfile ~/.gitignore_global
+	$ nano ~/.gitignore_global
+
+Resync .gitignore
 
 	$ git rm -r --cached
 	$ git add --all # or git add .
