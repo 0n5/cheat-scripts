@@ -1,6 +1,9 @@
 NVM (Node Version Manager)
 ==========================
 
+If the bash_profile file does not exist create:
+
+	$ touch ~/.bash_profile 	
 
 #### Installation
 

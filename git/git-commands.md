@@ -6,6 +6,10 @@ Git command cheats
 	$ apt-get install git
 
 
+#### Removal
+
+	$ rm -r .git 
+
 #### Configuration
 
 	$ git config --global user.name your_username
@@ -22,6 +26,7 @@ Git command cheats
 #### HTTPS Remote Origin
 
 	$ git remote add origin https://github.com/user/repo.git      # add remote origin
+	$ git remote rm origin                                        # remove remote origin
 	$ git remote set-url origin https://github.com/user/repo.git  # reset remote origin
 	$ git remote -v                                               # view remote origins
 
