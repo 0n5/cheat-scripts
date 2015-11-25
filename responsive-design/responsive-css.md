@@ -2,6 +2,22 @@ CSS3
 ====
 
 
+#### Normalize 
+
+Using Bower & NVM
+
+	$ nvm use stable
+	$ bower install normalize.css
+
+``` html
+
+<head>
+<link rel="stylesheet" type="text/css" href="normalize.css">
+</head>
+
+```
+
+
 #### box-sizing
 
 tells browser whether or not to include content-box or everything with border-box
