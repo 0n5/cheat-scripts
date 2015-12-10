@@ -7,7 +7,8 @@ Installation
 
 	$ gem install bundler
 
-Usage
+Usage:
+
 Navigate to the directory where Gemfile is lcoated
 
 	$ bundle install

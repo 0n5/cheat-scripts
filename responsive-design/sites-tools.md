@@ -11,6 +11,10 @@ Sites & Tools
 
 [Udacity Style Guide](http://udacity.github.io/frontend-nanodegree-styleguide/)
 
+#### Styling
+
+[ColorHexa](http://www.colorhexa.com/)
+
 
 #### Emulation
 

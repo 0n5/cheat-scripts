@@ -181,6 +181,17 @@ srcset=”kookabura.small.jpg 2x, kookabura.smaller.jpg 1x”
 
 ```
 
+``` html
+<picture>
+  <source media ="(min-width: 401px)" srcset="assets/photo-1421840809797-7b1e0e159af2-jumbo-x_x2.jpeg"> 
+  <source media ="(min-width: 400px)" srcset="assets/photo-1421840809797-7b1e0e159af2-portfolio.jpeg">   
+    <img src="assets/photo-1421840809797-7b1e0e159af2-jumbo-x_x2.jpeg"
+         alt="birds"
+         class="img-responsive birds">
+</picture>  
+
+```
+
 
 #### Multiple Images side by side
 

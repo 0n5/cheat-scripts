@@ -76,3 +76,19 @@ Resync .gitignore
 	$ git commit -m "resync"
 	$ git push
 
+Untrack files alread commited
+
+	$ echo [FILE] >> ~/.gitignore
+	$ git rm -r --cached [FILE]
+	$ git add -u
+	$ git commit -m "remove cached git files"
+	$ git pull
+	$ git push
+
+
+
+
+
+
+
+
