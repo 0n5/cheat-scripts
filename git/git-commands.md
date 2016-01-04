@@ -51,12 +51,22 @@ Git command cheats
 
 #### Push
 
+Push to existing repository
+
 	$ git add --all           # adds everything in current path
 	$ git add .               # adds everything in current path
 	$ git add [file]          # adds only the specific file 
 	$ git commit -m "first"
 	$ git push
  
+ Push to new empty repository
+
+ 	$ git init
+ 	$ git remote add origin https://github.com/[USERNAME]/[REPO].git
+ 	$ git add .
+ 	$ git commit "say something"
+ 	$ git push --set-upstream origin master
+
 #### Pull changes 
 
 	$ git pull origin master
