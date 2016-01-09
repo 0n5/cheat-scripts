@@ -1,6 +1,18 @@
 Postgresql
 ==========
 
+#### Installation
+
+Ubuntu
+
+	$ apt-get install postgresql postgresql-contrib
+
+
+#### Usage
+
+	$ su postgres
+	$ psql
+
 #### psql commands
 
 	\i [FILE.sql]    # initialize database with sql file
@@ -20,6 +32,12 @@ Postgresql
 	$ psql
 	# \c [DATABASE]
 	# grant all privileges on all tables in schema public to [USER];
+	# grant usage on all sequences in schema public to [USER];
+
+
+#### Create backup
+
+	$ pg_dump [DATABASE_FILE] > [OUTPUTFILE].sql
 
 
 #### Import SQL dump file
@@ -35,4 +53,17 @@ Postgresql
 ImportError: dlopen(/Users/[USER]/anaconda/lib/python2.7/site-packages/psycopg2/_psycopg.so.... 
 
 	$ export DYLD_FALLBACK_LIBRARY_PATH=$HOME/anaconda/lib/:$DYLD_FALLBACK_LIBRARY_PATH
+
+
+
+When installing psycopg2 on Ubuntu: Command "python setup.py egg_info" failed with error code 1.... 
+
+	$ sudo apt-get install libpq-dev python-dev
+
+
+duplicate key value violates unique constraint "[TABLE_NAME]_pkey"
+
+	# psql
+	# \c [DATABASE]
+	# select setval(pg_get_serial_sequence('[TABLE_NAME]', 'id'), MAX(id)) from [TABLE_NAME];
 
