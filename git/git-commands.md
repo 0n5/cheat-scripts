@@ -71,6 +71,10 @@ Push to existing repository
 
 	$ git pull origin master
 
+Pull changes and remove local files
+
+	$ git fetch --all
+	$ git reset --hard origin/master
 
 #### Git Ignore
 
