@@ -27,6 +27,11 @@ Ubuntu
 	# create database [DATABASE] owner [USER] encoding 'utf-8';
 	# \c [DATABASE]
 
+#### Delete Database
+
+	$ psql
+	# DROP DATABASE [DATABASE]
+
 #### Grant permissions
 
 	$ psql
@@ -37,8 +42,15 @@ Ubuntu
 
 #### Create backup
 
+SQL
+
 	$ pg_dump [DATABASE_FILE] > [OUTPUTFILE].sql
 
+CSV
+	$ su postgres
+	$ psql
+	# \c [DATABASE]
+	# \copy (SELECT * FROM movie) TO '/tmp/[FILE_NAME].csv' DELIMITER ',' CSV HEADER
 
 #### Import SQL dump file
 
@@ -54,6 +66,18 @@ ImportError: dlopen(/Users/[USER]/anaconda/lib/python2.7/site-packages/psycopg2/
 
 	$ export DYLD_FALLBACK_LIBRARY_PATH=$HOME/anaconda/lib/:$DYLD_FALLBACK_LIBRARY_PATH
 
+
+Error: pg_config executable not found.
+	
+	$ nano ~/.bash_profile
+
+add: 
+
+	PATH="/Applications/Postgres.app/Contents/Versions/9.x/bin:$PATH"
+
+save and close
+
+	$ source ~/.bash_profile
 
 
 When installing psycopg2 on Ubuntu: Command "python setup.py egg_info" failed with error code 1.... 
