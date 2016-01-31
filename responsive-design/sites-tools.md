@@ -38,8 +38,8 @@ Click mobile phone icon and select device
 
 #### Polyflls
 
-[Picturefill](https://scottjehl.github.io/picturefill/)
-[CSS-Element-Queries](https://github.com/marcj/css-element-queries)
+[Picturefill](https://scottjehl.github.io/picturefill/)<br>
+[CSS-Element-Queries](https://github.com/marcj/css-element-queries)<br>
 
 
 #### Image Optimziation
@@ -54,8 +54,8 @@ Click mobile phone icon and select device
 
 #### Glyphs & Unicode
 
-[Unicode Characters](http://unicode-table.com/en/#control-character)
-[Zocial Buttons](https://github.com/smcllns/css-social-buttons)
+[Unicode Characters](http://unicode-table.com/en/#control-character)<br>
+[Zocial Buttons](https://github.com/smcllns/css-social-buttons)<br>
 
 
 
