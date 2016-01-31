@@ -47,6 +47,7 @@ SQL
 	$ pg_dump [DATABASE_FILE] > [OUTPUTFILE].sql
 
 CSV
+
 	$ su postgres
 	$ psql
 	# \c [DATABASE]
