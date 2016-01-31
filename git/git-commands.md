@@ -100,6 +100,9 @@ Untrack files already commited
 	$ git pull
 	$ git push
 
+Untrack Renamed file/folder already commited
+
+	$ git rm -r --cached [FILE]  # file will be deleted on next commit/push
 
 
 
