@@ -91,6 +91,9 @@ Resync .gitignore
 	$ git commit -m "resync"
 	$ git push
 
+
+#### Untracking
+
 Untrack files already commited
 
 	$ echo [FILE] >> ~/.gitignore
