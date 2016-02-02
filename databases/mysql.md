@@ -29,7 +29,7 @@ PyMySQL
 
 #### Create Database
 
-	$ msyql
+	$ msyql -u [USERNAME] -p
 	mysql> create database [DATABASE];
 	mysql> show databases;
 
@@ -44,7 +44,7 @@ Grant Access to User
 
 #### Query Database
 
-	$ mysql
+	$ mysql -u [USERNAME] -p
 	mysql> show databases;
 	mysql> use [DATABASE];
 
@@ -55,10 +55,6 @@ Show Schema
 Query Table
 
 	mysql> select * from [TABLE];
-
-
-
-
 
 
 #### Troubleshooting
