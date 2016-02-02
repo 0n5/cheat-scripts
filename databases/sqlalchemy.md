@@ -62,7 +62,7 @@ def upgrade(migrate_engine):
 	meta = MetaData(bind=migrate_engine)
 	[TABLENAME] = Table('[TABLENAME]', meta,
 	    Column('id', INTEGER, primary_key=True, autoincrement=True),
-	    Column('[COLUMN_NAME]', [DATATYPE]),
+	    Column('[COLUMN_NAME]', [DATATYPE])
 	)
 	meta.create_all()
 
