@@ -55,7 +55,7 @@ add to the file:
 
 ``` python
 
-from sqlalchemy import Boolean, Table, MetaData, Column, VARCHAR, INTEGER
+from sqlalchemy import Boolean, Table, MetaData, Column, INTEGER
 from migrate import *
 
 def upgrade(migrate_engine):
