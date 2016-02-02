@@ -67,3 +67,7 @@ def upgrade(migrate_engine):
 
 ```
 
+save and exit. 
+
+	$ python manage.py upgrade
+
