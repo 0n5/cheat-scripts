@@ -65,6 +65,11 @@ def upgrade(migrate_engine):
 	)
 	meta.create_all()
 
+def downgrade(migrate_engine):
+	meta = MetaData(bind=migrate_engine)
+	[TABLENAME] = Table('[TABLENAME]', meta, autoload=True)
+	[TABLENAME].drop()
+
 ```
 
 save and exit. 
