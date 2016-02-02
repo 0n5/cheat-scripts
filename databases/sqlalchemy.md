@@ -76,3 +76,13 @@ save and exit.
 
 	$ python manage.py upgrade
 
+
+#### Downgrade migration
+
+	$ python manage.py downgrade [VERSION_NUMBER]
+
+
+
+
+
+
