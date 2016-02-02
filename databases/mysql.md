@@ -1,10 +1,64 @@
-Mysql
+MySQL
 =====
 
 #### Install for LAMP stack
 
 	$ apt-get update
 	$ apt-get install mysql-server libapache2-mod-auth-mysql php5-mysql mysql-client
+
+
+#### Install on OSX
+
+[MySQL Community Edition](https://dev.mysql.com/downloads/mysql/)
+
+	$ nano ~/.bash_profile
+
+add to the file:
+
+	export PATH=$PATH:/usr/local/mysql/bin
+
+save and edit.
+
+
+#### Install Drivers
+
+PyMySQL
+
+	$ pip install pymysql
+
+
+#### Create Database
+
+	$ msyql
+	mysql> create database [DATABASE];
+	mysql> show databases;
+
+Create User
+
+	msyql> create user '[USERNAME]'@'localhost' indentified by '[PASSWORD';
+
+Grant Access to User
+
+	mysql> grant all privileges on *.* to '[USERNAME'@'localhost';
+
+
+#### Query Database
+
+	$ mysql
+	mysql> show databases;
+	mysql> use [DATABASE];
+
+Show Schema
+
+	mysql> describe [DATABASE].[TABLE];
+
+Query Table
+
+	mysql> select * from [TABLE];
+
+
+
+
 
 
 #### Troubleshooting
