@@ -26,7 +26,8 @@ add to the file:
 from migrate.versioning.shell import main
 
 if __name__ == '__main__':
-    main(url='[SQL_FLAVOR]+[DRIVER]://[USERNAME]:[PASSWORD]@localhost/[DATABASE]', debug='False', repository='../[REPOSITORY')
+    main(url='[SQL_FLAVOR]+[DRIVER]://[USERNAME]:[PASSWORD]@localhost/[DATABASE]', \
+    debug='False', repository='../[REPOSITORY')
 
 save and exit
 
@@ -44,4 +45,25 @@ Check highest version available
 	$ python manage.py version
 
 
+
+#### Create Table migration
+
+	$ python manage.py script "create table"   # output will be /versions/001_create_table.py
+	$ nano versions/001_create_table.py
+
+add to the file:
+
+``` python
+
+from sqlalchemy import Boolean, Table, MetaData, Column, VARCHAR, INTEGER
+from migrate import *
+
+def upgrade(migrate_engine):
+	meta = MetaData(bind=migrate_engine)
+	[TABLENAME] = Table('[TABLENAME]', meta,
+	    Column('id', INTEGER, primary_key=True, autoincrement=True)
+	)
+	meta.create_all()
+
+```
 
