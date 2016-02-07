@@ -57,6 +57,15 @@ Query Table
 	mysql> select * from [TABLE];
 
 
+#### Backup Database
+
+	$ mysqldump -u root -p[PASSWORD] [DATABASE] > dumpfilename.sql
+
+
+#### Restore Database
+
+	$ mysql -u root -p[PASSWORD] [DATABASE] < dumpfilename.sql	
+
 #### Troubleshooting
 
 Workflow
