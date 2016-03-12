@@ -16,6 +16,13 @@ RVM cheat sheet (official): [http://cheat.errtheblog.com/s/rvm](http://cheat.err
 
 #### Requirements
 
+Install Homebrew or other package manager as Admin
+
+Fix Homebrew permissions:
+
+	chown -R [USER] /usr/local
+    chown -R [USER] /Library/Caches/Homebrew
+
 Install commmand line tools:
 
 	$ xcode-select --install
@@ -43,13 +50,9 @@ Reload the profile:
 
 #### Installing Ruby version
 
-	$ su [ADMIN_USER]
 	$ rvm install 2.x.x
 
 #### Using Ruby versions
-
-	$ su [ADMIN_USER]
-	$ bash --login
 
 	$ rvm use 2.x.x    # use RVM ruby  
 	$ rvm system       # fallback to using system installed ruby
@@ -57,8 +60,8 @@ Reload the profile:
 
 #### Remove RVM
 
-	$ sudo rvm implode
-	$ sudo rm /etc/rvmrc
+	$ rvm implode
+	$ rm /etc/rvmrc
 	$ gem uninstall rvm
 
 Remove environment variables in bash_profile file

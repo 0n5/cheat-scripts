@@ -40,7 +40,7 @@ Click mobile phone icon and select device
 
 [Picturefill](https://scottjehl.github.io/picturefill/)<br>
 [CSS-Element-Queries](https://github.com/marcj/css-element-queries)<br>
-
+[Autoprefixer](https://github.com/postcss/autoprefixer)<br>
 
 #### Image Optimziation
 
@@ -56,7 +56,26 @@ Click mobile phone icon and select device
 
 [Unicode Characters](http://unicode-table.com/en/#control-character)<br>
 [Zocial Buttons](https://github.com/smcllns/css-social-buttons)<br>
+[Font Awesome](https://fortawesome.github.io/Font-Awesome/)<br>
 
+#### Social Buttons
+
+[Bootstrap Social](https://github.com/lipis/bootstrap-social)<br>
+
+
+#### CSS Preprocessors
+
+[Sass](http://sass-lang.com)<br>
+
+
+#### Bootstrap 
+
+[Jasny Bootstrap](http://www.jasny.net/bootstrap/)
+
+
+#### Jquery Plugins 
+
+[Supersized](http://buildinternet.com/project/supersized/)
 
 
 

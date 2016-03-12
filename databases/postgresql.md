@@ -27,6 +27,21 @@ Ubuntu
 	# create database [DATABASE] owner [USER] encoding 'utf-8';
 	# \c [DATABASE]
 
+
+#### Querying
+
+	$ psql
+	$ \c [DATABASE]
+	$ select [COLUMN] from [TABLE];
+
+Multiple Columns
+	
+	$ select [COLUMN_1], [COLUMN_2] from [TABLE] order by [COLUMN_1];
+
+Delete Records
+
+	$ delete from [TABLE] where [COLUMN] > [NUMBER];
+
 #### Delete Database
 
 	$ psql
