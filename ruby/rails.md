@@ -116,7 +116,7 @@ creates the following:
 
 creates the following:
 
-    db/migrate/_create_movies.rb
+    db/migrate/YYYYMMDDHHMMSS_create_movies.rb
     app/models/movie.rb
     test/models/movie_test.rb
     test/fixtures/movies.yml
@@ -144,11 +144,45 @@ creates the following:
 
 #### Migrations
 
-	/db/migrate/[MIGRATION_FILE]_create_[MODEL].rb
+	/db/migrate/YYYYMMDDHHMMSS_create_[MODEL].rb
 
 Run Migration:
 
 	rake db:migrate
+
+
+#### Migrations
+
+Structure:
+
+	db/migrate/
+
+format:
+
+	YYYYMMDDHHMMSS_create_[DESCRIPTION].rb
+
+Create Migration to add field to Model
+
+
+``` ruby
+
+	class AddFieldToUsers < ActiveRecord::Migration
+
+	  def change
+	    add_column :users, :[FIELD], :string
+	  end
+
+	end
+```
+
+
+#### Templating
+
+     <%= link_to "[VISIBLE_TEXT]", [path], class: "[CLASS]" %>
+
+paths:
+
+	root_path   # links to document root /
 
 
 #### Bootstrap
@@ -197,7 +231,7 @@ Create User Model
 
 creates the following: 
 
-    db/migrate/_devise_create_users.rb
+    db/migrate/YYYYMMDDHHMMSS_devise_create_users.rb
     app/models/user.rb
     test/models/user_test.rb
     test/fixtures/users.yml
@@ -219,6 +253,14 @@ Functions:
     edit_user_registration_path   # edit user account
 	destroy_user_session_path     # delete account
 
+Conditionals:
+
+``` ruby
+
+	<% if current_user %>    # content bound by conditional
+		...
+	<% end %>
+```
 
 Create Admin Model
 	
@@ -226,7 +268,7 @@ Create Admin Model
 
 creates the following: 
 
-    db/migrate/_devise_create_admins.rb
+    db/migrate/YYYYMMDDHHMMSS_devise_create_admins.rb
     app/models/admin.rb
     test/models/admin_test.rb
     test/fixtures/admins.yml
@@ -281,11 +323,14 @@ using validate_url
 
 edit the file:
 
+``` ruby
+
 	class [MODEL_CLASS] < ActiveRecord::Base
 
 		validates :[FIELD], presence: true
 		validates :[FIELD], :numericality => {:allow_blank => true}
 	end
+```
 
 save and exit
 
@@ -299,9 +344,11 @@ save and exit
 
 add to the file:
 
+``` ruby
+
 	require 'nokogiri'
 	require 'open-uri'
-
+```
 
 usage
 
