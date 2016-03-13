@@ -161,12 +161,19 @@ format:
 
 	YYYYMMDDHHMMSS_create_[DESCRIPTION].rb
 
+
+Auto create Migration:
+
+	$ rails g migration AddFieldToUser
+
+
 Create Migration to add field to Model
 
 
 ``` ruby
 
-	class AddFieldToUsers < ActiveRecord::Migration
+	class AddFieldToUser < ActiveRecord::Migration
+	# class name must be same as migration name
 
 	  def change
 	    add_column :users, :[FIELD], :string
@@ -175,6 +182,42 @@ Create Migration to add field to Model
 	end
 ```
 
+Edit User Registration form
+
+	$ nano app/views/devise/registrations/new.html.erb
+	$ nano app/views/devise/registrations/edit.html.erb
+
+add to both the file:
+
+
+``` ruby
+
+	<%= f.input :[FIELD], required: true %>
+
+```
+
+
+Modify Controller to persist data and sanitize:
+
+	$ nano app/controllers/application_controller.rb
+
+``` ruby 
+
+class ApplicationController < ActionController::Base
+
+    protect_from_forgery with: :exception
+    before_filter :configure_permitted_parameters, if: :devise_controller?
+
+    protected
+
+        def configure_permitted_parameters
+            devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:[NEWFIELD], :email, :password) }
+            devise_parameter_sanitizer.for(:account_update) \
+            { |u| u.permit(:[NEWFIELD], :email, :password, :current_password) }
+        end
+end
+
+```
 
 #### Templating
 
