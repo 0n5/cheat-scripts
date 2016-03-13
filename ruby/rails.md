@@ -142,16 +142,10 @@ creates the following:
 	$ rails g model [MODEL]
 
 
-#### Migrations
-
-	/db/migrate/YYYYMMDDHHMMSS_create_[MODEL].rb
-
-Run Migration:
-
-	rake db:migrate
-
 
 #### Migrations
+
+	$ rake db:migrate
 
 Structure:
 
@@ -218,6 +212,8 @@ class ApplicationController < ActionController::Base
 end
 
 ```
+
+
 
 #### Templating
 
