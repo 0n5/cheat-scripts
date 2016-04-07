@@ -1,12 +1,17 @@
 Ruby on Rails
 =============
 
+Use RVM or Rbenv version/environment manager
+
+
+#### Preperation 
+
+	$ gem install bundler
+	$ gem install sqlite3
+
 
 #### Installation
 
-Requires RVM
-
-	$ rvm use 2.x.x
 	$ gem install rails
 
 
@@ -25,7 +30,7 @@ Add to the file:
 
 Saved and exit. 
 
-	$ bundle install
+	$ bundle
 
 
 #### Running Web Server
@@ -87,24 +92,51 @@ when rails new [APP] is run:
 	README.md
 
 
-#### Controllers
+#### Rspec
 
-	$ rails g controller [CONTROLLER] [ACTION]
+	$ nano Gemfile
 
-or
+Add to file:
 
-	$ rails generate controller pages home
+``` ruby
 
-creates the following:
+group :development, :test do
+	gem 'rspec-rails', '~> 2.0'	
+end
 
-    app/controllers/pages_controller.rb
-    route  get 'pages/home'
-    app/views/pages
-    app/views/pages/home.html.erb
-    test/controllers/pages_controller_test.rb
-    app/helpers/pages_helper.rb
-    app/assets/javascripts/pages.coffee
-    app/assets/stylesheets/pages.scss
+group :test do 
+	gem 'capybara', '~> 2.1.0'
+end
+
+
+```
+
+save and exit
+
+	$ bundle
+	$ bin/rails generate rspec:install
+
+Creates the following:
+
+	.rspec
+    spec
+    spec/spec_helper.rb
+
+Configuration
+
+	$ nano spec/spec_helper.rb
+
+Add to the top of file under last require:
+
+	$ require 'capybara/rspec'
+
+	$ bundle binstubs rspec-core
+	$ git rm -rf /test       # remove default test directory
+
+
+Testing
+
+	$ rake spec
 
 
 #### Scaffolding Models
@@ -137,15 +169,13 @@ creates the following:
 
     $ rake db:migrate
 
-#### Models
-
-	$ rails g model [MODEL]
-
+go to localhost/[model] for crud form
 
 
 #### Migrations
 
-	$ rake db:migrate
+	$ rake db:migrate                 # migrates current environment
+	$ rake db:migrate RAILS_ENV=test  # migrates test environment
 
 Structure:
 
@@ -156,72 +186,114 @@ format:
 	YYYYMMDDHHMMSS_create_[DESCRIPTION].rb
 
 
-Auto create Migration:
+Create Migration to change data types
 
-	$ rails g migration AddFieldToUser
-
-
-Create Migration to add field to Model
+	$ rails g migration change_data_type
 
 
 ``` ruby
 
-	class AddFieldToUser < ActiveRecord::Migration
-	# class name must be same as migration name
-
+	class change_data_type < ActiveRecord::Migration
 	  def change
-	    add_column :users, :[FIELD], :string
+	    change_column :[TABLE], :[COLUMN], :[DATA_TYPE]
 	  end
+```
 
+Rolling Back Migration
+
+	$ rake db:migrate:down VERSION=[VERSION_NUMBER]
+
+
+
+#### Routes
+
+
+	/config/routes.rb
+
+	$ rake route   # shows all routes application is using
+
+set application root
+
+	$ nano config/routes.rb
+
+add to the file:
+
+	root '[MODEL]#[VIEW]'
+
+
+#### Validation
+
+[Active Record Validations docs](http://guides.rubyonrails.org/active_record_validations.html)
+
+	$ nano /app/models/[MODEL].rb
+
+edit the file:
+
+``` ruby
+
+	class [MODEL_CLASS] < ActiveRecord::Base
+
+		validates :[FIELD], presence: true
+		validates :[FIELD], numericality: true, :allow_nil => true
+		validates :[FIELD], length: { minimum: 3 }
 	end
 ```
 
-Edit User Registration form
-
-	$ nano app/views/devise/registrations/new.html.erb
-	$ nano app/views/devise/registrations/edit.html.erb
-
-add to both the file:
+save and exit
 
 
-``` ruby
+#### Models
 
-	<%= f.input :[FIELD], required: true %>
+	$ rails g model [MODEL] [FIELD]:references [FIELD]:string
+	$ rails g model [MODEL] [FIELD]:references [FIELD]:string -p   # previews generation
 
-```
-
-
-Modify Controller to persist data and sanitize:
-
-	$ nano app/controllers/application_controller.rb
-
-``` ruby 
-
-class ApplicationController < ActionController::Base
-
-    protect_from_forgery with: :exception
-    before_filter :configure_permitted_parameters, if: :devise_controller?
-
-    protected
-
-        def configure_permitted_parameters
-            devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:[NEWFIELD], :email, :password) }
-            devise_parameter_sanitizer.for(:account_update) \
-            { |u| u.permit(:[NEWFIELD], :email, :password, :current_password) }
-        end
-end
-
-```
+	$ rake db:migrate
+	$ rake db:migrate RAILS_ENV=test    # migrates test environment
 
 
+creates:
 
-#### Templating
+      invoke  active_record
+      create    db/migrate/20160406054455_create_[FIELD].rb
+      create    app/models/[FIELD].rb
+      invoke    rspec
+      create      spec/models/[FIELD]_spec.rb
 
-     <%= link_to "[VISIBLE_TEXT]", [path], class: "[CLASS]" %>
+
+#### Controllers
+
+	$ rails g controller [CONTROLLER] [ACTION]
+	$ rails g controller [CONTROLLER] [ACTION] -p  # preview without running	
+
+creates the following:
+
+    app/controllers/pages_controller.rb
+    route  get 'pages/home'
+    app/views/pages
+    app/views/pages/home.html.erb
+    test/controllers/pages_controller_test.rb
+    app/helpers/pages_helper.rb
+    app/assets/javascripts/pages.coffee
+    app/assets/stylesheets/pages.scss
+
+
+
+#### Database
+
+	$ rake db:purge   # removes all models, data from database
+
+
+
+#### ERB Templating
+
+	<%= =>   # links to a helper
+
+    <%= link_to "[VISIBLE_TEXT]", [path], class: "[CLASS]" %>
 
 paths:
 
 	root_path   # links to document root /
+
 
 
 #### Bootstrap
@@ -350,29 +422,57 @@ creates the following:
     app/views/devise/mailer/unlock_instructions.html.erb
 
 
- 
-#### Validation
+Create Migration to add field to Devise Model
 
-using validate_url
-
-	$ echo "gem 'validate_url'" >> 'Gemfile'
-	$ bundle install
-
-	$ nano /app/models/[MODEL].rb
-
-edit the file:
 
 ``` ruby
 
-	class [MODEL_CLASS] < ActiveRecord::Base
+	class AddFieldToUser < ActiveRecord::Migration
+	# class name must be same as migration name
 
-		validates :[FIELD], presence: true
-		validates :[FIELD], :numericality => {:allow_blank => true}
+	  def change
+	    add_column :users, :[FIELD], :string
+	  end
+
 	end
 ```
 
-save and exit
+Edit User Registration form
 
+	$ nano app/views/devise/registrations/new.html.erb
+	$ nano app/views/devise/registrations/edit.html.erb
+
+add to both the file:
+
+
+``` ruby
+
+	<%= f.input :[FIELD], required: true %>
+
+```
+
+
+Modify Controller to persist data and sanitize:
+
+	$ nano app/controllers/application_controller.rb
+
+``` ruby 
+
+class ApplicationController < ActionController::Base
+
+    protect_from_forgery with: :exception
+    before_filter :configure_permitted_parameters, if: :devise_controller?
+
+    protected
+
+        def configure_permitted_parameters
+            devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:[NEWFIELD], :email, :password) }
+            devise_parameter_sanitizer.for(:account_update) \
+            { |u| u.permit(:[NEWFIELD], :email, :password, :current_password) }
+        end
+end
+
+```
 
 
 #### Nokogiri
@@ -381,7 +481,7 @@ save and exit
 	$ bundle install
 	$ nano config/initializers/noko.rb
 
-add to the file:
+create file and add:
 
 ``` ruby
 
