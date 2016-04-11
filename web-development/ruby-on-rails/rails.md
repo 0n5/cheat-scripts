@@ -20,7 +20,12 @@ Use RVM or Rbenv version/environment manager
 	$ rails new [PROJECT_NAME] 
 
 
-#### Install gem (package)
+#### Gems
+
+[RubyGems](https://rubygems.org/)
+[Ruby Toolbox](https://www.ruby-toolbox.com/)
+
+Installation
 
 	$ nano GemFile
 
@@ -32,6 +37,23 @@ Saved and exit.
 
 	$ bundle
 
+or
+
+	$ gem install [GEM]
+	$ gem install [GEM] -v [VERSION_NUMBER]
+
+Updating
+
+	$ gem update [GEM]
+
+Commands
+
+	$ gem list             # lists all local gems
+	$ gem search [GEM]     # searches remove gems
+	$ gem help             # gem help commands
+	$ gem help commands    # lists all available gem commands
+	$ gem help [command]   # shows all options available for the command
+	$ gem environment      # shows all path and environment info
 
 #### Running Web Server
 
@@ -177,6 +199,7 @@ go to localhost/[model] for crud form
 	$ rake db:migrate                 # migrates current environment
 	$ rake db:migrate RAILS_ENV=test  # migrates test environment
 
+
 Structure:
 
 	db/migrate/
@@ -204,6 +227,12 @@ Rolling Back Migration
 	$ rake db:migrate:down VERSION=[VERSION_NUMBER]
 
 
+methods:
+
+	add_column :[TABLE], :[COLUMN], :[DATA_TYPE]      # adds column
+	change_column :[TABLE], :[COLUMN], :[DATA_TYPE]   # adds column	
+	add_index :[TABLE], :[COLUMN]                     # adds index
+	remove_column :[TABLE], :[COLUMN]                 # removes column
 
 #### Routes
 
@@ -259,6 +288,26 @@ creates:
       invoke    rspec
       create      spec/models/[FIELD]_spec.rb
 
+associations
+
+has_many:
+
+	$ nano app/models/item.rb
+
+``` ruby
+
+belongs_to :user
+
+```
+
+	$ nano app/models/user.rb
+
+``` ruby
+
+has_many :items
+
+```
+
 
 #### Controllers
 
@@ -284,17 +333,24 @@ creates the following:
 
 
 
-#### ERB Templating
+#### Flashing
 
-	<%= =>   # links to a helper
+	$ nano app/views/layouts/application.html.erb
 
-    <%= link_to "[VISIBLE_TEXT]", [path], class: "[CLASS]" %>
-
-paths:
-
-	root_path   # links to document root /
+add to the file:
 
 
+``` ruby 
+
+</body>
+
+<%= flash.each do |type, message| %>
+  <div class ="alert flash" <%= type %>">
+    <%= message %>
+  </div>
+<% end %>
+
+```
 
 #### Bootstrap
 
@@ -324,156 +380,40 @@ creates the following:
     config/locales/simple_form.en.yml
     lib/templates/erb/scaffold/_form.html.erb
 
-
-#### Devise
-
-	$ echo "gem 'devise'" >> 'Gemfile'
-	$ bundle install
-	$ rails generate devise:install
-
-creates the following:
-
-	config/initializers/devise.rb
-    config/locales/devise.en.yml
-
-Create User Model
-
-	$ rails generate devise user
-
-creates the following: 
-
-    db/migrate/YYYYMMDDHHMMSS_devise_create_users.rb
-    app/models/user.rb
-    test/models/user_test.rb
-    test/fixtures/users.yml
-    route  devise_for :users	
-
-run migration:
-
-	$ rake db:migrate
-
-Paths:
-
-	/users/sign_in
-	/users/sign_up
-
-Functions:
-
-	new_user_session_path         # login path
-    new_user_registration_path    # user registration 
-    edit_user_registration_path   # edit user account
-	destroy_user_session_path     # delete account
-
-Conditionals:
+usage
 
 ``` ruby
 
-	<% if current_user %>    # content bound by conditional
-		...
-	<% end %>
-```
-
-Create Admin Model
-	
-	$ rails g devise Admin
-
-creates the following: 
-
-    db/migrate/YYYYMMDDHHMMSS_devise_create_admins.rb
-    app/models/admin.rb
-    test/models/admin_test.rb
-    test/fixtures/admins.yml
-    app/models/admin.rb
-    route  devise_for :admins
-
-    $ rake db:MIGRATION_FILE
-
-
-Paths:
-
-	/admins/sign_in
-	/admins/sign_up
-
-
-Generate Views
-
-	$ rails generate devise:views
-
-creates the following:
-
-    app/views/devise/shared
-    app/views/devise/shared/_links.html.erb
-    app/views/devise/confirmations
-    app/views/devise/confirmations/new.html.erb
-    app/views/devise/passwords
-    app/views/devise/passwords/edit.html.erb
-    app/views/devise/passwords/new.html.erb
-    app/views/devise/registrations
-    app/views/devise/registrations/edit.html.erb
-    app/views/devise/registrations/new.html.erb
-    app/views/devise/sessions
-    app/views/devise/sessions/new.html.erb
-    app/views/devise/unlocks
-    app/views/devise/unlocks/new.html.erb
-    app/views/devise/mailer
-    app/views/devise/mailer/confirmation_instructions.html.erb
-    app/views/devise/mailer/password_change.html.erb
-    app/views/devise/mailer/reset_password_instructions.html.erb
-    app/views/devise/mailer/unlock_instructions.html.erb
-
-
-Create Migration to add field to Devise Model
-
-
-``` ruby
-
-	class AddFieldToUser < ActiveRecord::Migration
-	# class name must be same as migration name
-
-	  def change
-	    add_column :users, :[FIELD], :string
-	  end
-
-	end
-```
-
-Edit User Registration form
-
-	$ nano app/views/devise/registrations/new.html.erb
-	$ nano app/views/devise/registrations/edit.html.erb
-
-add to both the file:
-
-
-``` ruby
-
-	<%= f.input :[FIELD], required: true %>
+<%= simple_form_for @user do |f| %>
+  <%= f.input :username %>
+  <%= f.input :password %>
+  <%= f.button :submit %>
+<% end %>
 
 ```
 
-
-Modify Controller to persist data and sanitize:
-
-	$ nano app/controllers/application_controller.rb
+overwriting default classes
 
 ``` ruby 
 
-class ApplicationController < ActionController::Base
-
-    protect_from_forgery with: :exception
-    before_filter :configure_permitted_parameters, if: :devise_controller?
-
-    protected
-
-        def configure_permitted_parameters
-            devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:[NEWFIELD], :email, :password) }
-            devise_parameter_sanitizer.for(:account_update) \
-            { |u| u.permit(:[NEWFIELD], :email, :password, :current_password) }
-        end
-end
+<%= simple_form_for @user, defaults: { input_html: { class: 'default_class' } } do |f| %>
+  <%= f.input :username, input_html: { class: 'special' } %>
+  <%= f.input :password, input_html: { maxlength: 20 } %>
+  <%= f.input :remember_me, input_html: { value: '1' } %>
+  <%= f.button :submit %>
+<% end %>
 
 ```
 
+Collections
+
+
+
+``` ruby
+
+<%= f.input :user_id, collection: User.all, label_method full_name %>
+
+```
 
 #### Nokogiri
 
@@ -508,7 +448,7 @@ usage
 files appended with .scss extension
 
 
-#### Structure
+Structure
 
 Rename application.css file .scss
 
@@ -517,7 +457,7 @@ Rename application.css file .scss
 	app/assets/stylesheets/tools.scss
 	app/assets/stylesheets/variables.scss
 
-#### Importing
+Importing
 
 In application.scss file:
 

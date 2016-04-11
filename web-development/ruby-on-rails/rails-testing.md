@@ -20,10 +20,12 @@ end
 Run all tests
 
 	$ rake spec
+	$ rake spec spec/features   # runs all tests in features folder
 
 Formats
 
 	$ spec --format=documentation spec/path/to/test.rb   # prints out name of test when running
+
 
 
 #### Capybara
@@ -57,7 +59,7 @@ end
 	$ bundle
 
 
-	$ nano spec_helper
+	$ nano /spec/views/spec_helper
 
 add configuration to the file:
 
@@ -75,6 +77,35 @@ Shoulda::Matchers.configure do |config|
 end
 
 ```
+
+#### Rspec Helpers
+
+	$ mkdir /spec/support
+	$ nano helpers.rb
+
+``` ruby
+
+module Helpers
+	def some_function(a)
+		// some code
+	end
+
+```
+
+enable helper
+
+	$ nano /spec/views/spec_helper.rb
+ 
+make the file look like this: 
+
+``` ruby
+
+	RSpec.configure do |config|
+		config.include Helper, type:feature
+
+```
+
+
 
 
 
