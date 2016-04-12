@@ -1,3 +1,7 @@
+
+
+``` 
+
 upstream app {
     server unix:path/to/unicorn.sock fail_timeout=0;
 }
@@ -22,3 +26,5 @@ server {
     client_max_body_size 4G;
     keepalive_timeout 10;
 }
+
+```
