@@ -10,12 +10,35 @@ add to the file:
 ``` ruby 
 
 group :development, :test do
-	gem 'rspec-rails', '~> 2.0'	
+    gem 'rspec-rails', '~> 2.0' 
+end
+
+group :test do 
+    gem 'capybara', '~> 2.1.0'
 end
 
 ```
 
 	$ bundle
+	$ bin/rails generate rspec:install
+
+Creates the following:
+
+	.rspec
+    spec
+    spec/spec_helper.rb
+
+Configuration
+
+	$ nano spec/spec_helper.rb
+
+Add to the top of file under last require:
+
+	$ require 'capybara/rspec'
+
+	$ bundle binstubs rspec-core
+	$ git rm -rf /test       # remove default test directory
+
 
 Run all tests
 
@@ -26,22 +49,6 @@ Formats
 
 	$ spec --format=documentation spec/path/to/test.rb   # prints out name of test when running
 
-
-
-#### Capybara
-
-	$ nano Gemfile
-
-add to the file: 
-
-``` ruby 
-group :test do 
-	gem 'capybara', '~> 2.1.0'
-end
-
-```
-
-	$ bundle
 
 #### Shoulda Matchers
 
