@@ -58,6 +58,14 @@ Reload the profile:
 	$ rvm system       # fallback to using system installed ruby
 
 
+
+#### Troubleshooting
+
+RVM is not a function, selecting rubies with 'rvm use ...' will not work:
+
+	$ $ source ~/.rvm/scripts/rvm
+
+
 #### Remove RVM
 
 	$ rvm implode

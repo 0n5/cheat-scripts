@@ -46,6 +46,12 @@ Updating
 
 	$ gem update [GEM]
 
+
+Uninstalling
+
+	$ gem uninstall [GEM]
+	$ gem uninstall [GEM] -v [VERSION_NUMBER]
+
 Commands
 
 	$ gem list             # lists all local gems
@@ -54,6 +60,7 @@ Commands
 	$ gem help commands    # lists all available gem commands
 	$ gem help [command]   # shows all options available for the command
 	$ gem environment      # shows all path and environment info
+	$ gem content [GEM]    # lists all files in gem
 
 #### Running Web Server
 
