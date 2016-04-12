@@ -255,8 +255,16 @@ methods:
 #### Assets
 
 
-	$ RAILS_ENV=production rake assets:precompile
+	$ RAILS_ENV=production rake assets:precompile    # precompiles files to public/assets
+	$ rake assets:clobber	                         # removes assets
 
+View changes in production
+
+w/ nginx + unicorn
+
+	$ RAILS_ENV=production rake assets:precompile
+	$ service unicorn_[APPNAME] restart
+	$ service nginx restart
 
 
 #### Routes
