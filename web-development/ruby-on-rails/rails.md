@@ -374,6 +374,42 @@ creates or modifies the following files:
     app/assets/stylesheets/application.css
 
 
+less-rails-bootstrap
+	$ nano GemFile
+
+add to the file:
+
+	gem 'therubyracer'  # If using Ruby
+	gem 'therubyrhino'  # If using JRuby
+	gem 'jquery-rails'  # May already be installed
+	gem 'less-rails-bootstrap'
+
+save and exit
+
+	$ bundle install
+
+Configuration
+
+	$ nano application.css
+	
+add to the file: 
+	
+	/*
+	*= require twitter/bootstrap
+	*/
+
+save and exit.
+
+	$ nano application.js
+
+add to the file: 
+
+	//= require jquery
+	//= require jquery_ujs
+	//= require twitter/bootstrap
+
+save and exit. 
+
 #### Simple Form
 
 	$ echo "gem 'simple_form'" >> 'Gemfile'
