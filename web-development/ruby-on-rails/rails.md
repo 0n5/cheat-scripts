@@ -18,6 +18,62 @@ Use RVM or Rbenv version/environment manager
 #### Create Project
 
 	$ rails new [PROJECT_NAME] 
+	$ rails new [PROJECT_NAME] -d postgresql   # use postgres as default
+
+
+#### Configuring Database
+
+if using Postgres
+
+	$ sudo -u postgres createuser -s [USERNAME]   # create user
+	$ sudo -u postgres psql                       # drop into psql
+	=#  \password psql							  # set password
+	=#  \q
+
+	$ nano config/database.yml
+	
+make default look like this:
+
+	default: &default
+	  adapter: postgresql
+	  encoding: unicode
+	  pool: 5
+	  host: localhost
+	  template: template0 # fixes unicode errors
+
+change variables in Production 
+
+	production:
+	  <<: *default
+	  database: [APPNAME]_production
+	  username: [APPNAME]
+	  password: <%= ENV['[APPNAME]_DATABASE_PASSWORD'] %>
+	  template: template0   # fixes unicode errors
+	
+
+#### Configure Environment Variables
+
+if using rbenv 
+
+	$ cd ~/.rbenv/plugins
+	$ git clone https://github.com/sstephenson/rbenv-vars.git
+	$ cd /railsapp
+	$ rake secret
+	$ nano .rbenv-vars
+	
+add to the file:
+
+	SECRET_KEY_BASE='[SECRET]'
+	[APPNAME]_DATABASE_PASSWORD='[PASSWORD]'
+
+save and exit
+
+	$ rbenv vars
+	
+
+#### Create Production Database
+
+	$ RAILS_ENV=production rake db:create
 
 
 #### Gems
@@ -72,6 +128,7 @@ go to localhost:3000
 If on Cloud9 IDE:
 
 	$ rails s -b $IP -p $PORT
+	$ RAILS_ENV=production rails s -b $IP -p $PORT
 
 
 #### Structure
@@ -156,9 +213,9 @@ go to localhost/[model] for crud form
 
 #### Migrations
 
-	$ rake db:migrate                 # migrates current environment
-	$ rake db:migrate RAILS_ENV=test  # migrates test environment
-
+	$ rake db:migrate                        # migrates current environment
+	$ RAILS_ENV=test rake db:migrate         # migrates test environment
+	$ RAILS_ENV=production rake db:migrate   # migrates production environment
 
 Structure:
 
@@ -193,6 +250,14 @@ methods:
 	change_column :[TABLE], :[COLUMN], :[DATA_TYPE]   # adds column	
 	add_index :[TABLE], :[COLUMN]                     # adds index
 	remove_column :[TABLE], :[COLUMN]                 # removes column
+
+
+#### Assets
+
+
+	$ RAILS_ENV=production rake assets:precompile
+
+
 
 #### Routes
 
@@ -286,13 +351,6 @@ creates the following:
     app/assets/stylesheets/pages.scss
 
 
-
-#### Database
-
-	$ rake db:purge   # removes all models, data from database
-
-
-
 #### Flashing
 
 	$ nano app/views/layouts/application.html.erb
@@ -311,3 +369,9 @@ add to the file:
 <% end %>
 
 ```
+
+#### Database
+
+	$ rake db:purge   # removes all models, data from database
+
+
