@@ -63,7 +63,7 @@ Reload the profile:
 
 RVM is not a function, selecting rubies with 'rvm use ...' will not work:
 
-	$ $ source ~/.rvm/scripts/rvm
+	$ source ~/.rvm/scripts/rvm
 
 
 #### Remove RVM
