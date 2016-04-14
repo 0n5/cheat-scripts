@@ -1,6 +1,8 @@
 Nginx Configuration for Flask + Rails multi site
 ================================================
 
+``` bash
+
 upstream app {
   server unix:/path/to/myproject.sock fail_timeout=0;
 }
@@ -51,3 +53,4 @@ server {
 }
 
 
+```
