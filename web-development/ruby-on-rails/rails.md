@@ -256,13 +256,19 @@ methods:
 
 
 	$ RAILS_ENV=production rake assets:precompile    # precompiles files to public/assets
-	$ rake assets:clobber	                         # removes assets
-
+	$ rake tmp:cache:clear                           # clears tmp cache files
+  	$ rake assets:clobber	                         # removes assets
+	or
+	$ bundle exec rake assets:clobber
+	
 View changes in production
 
 w/ nginx + unicorn
 
 	$ RAILS_ENV=production rake assets:precompile
+	or 
+	$ bundle exec rake assets:precompile
+
 	$ service unicorn_[APPNAME] restart
 	$ service nginx restart
 
@@ -383,3 +389,8 @@ add to the file:
 	$ rake db:purge   # removes all models, data from database
 
 
+#### Troubleshooting
+
+`mkdir': Permission denied @ dir_s_mkdir - /run/user/1000/spring (Errno::EACCES)
+
+	$ unset XDG_RUNTIME_DIR
