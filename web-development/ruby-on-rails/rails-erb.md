@@ -33,20 +33,19 @@ Using partial in another template
 
 	link_to                                              # link
 	root_path                                            # links to document root /
-	edit_[FIELD]_path([FIELD])                           # edit object url path and passes single object in 
-	new_[FIELD]											 # new object url path
-
 	stylesheet_link_tag "application", :media => "all"   # links to css stylesheet
 	javascript_include_tag "application"				 # links to js files
 	csrf_meta_tags                                       # csrf protection
 
-	time_ago_in_words([FIELD].created_at), [FIELD]       # shows in words when the object was created
+	time_ago_in_words([OBJECT].created_at), [OBJECT]     # shows in words when the object was created
 
-#### Arguments
+#### CRUD
 
+``` ruby 
 
-Destroy
+<%= link_to 'Edit', edit_[OBJECT]_path(@[OBJECT) %> |
+<%= link_to 'Back', [MODEL]_path %>
+<%= link_to 'Destroy', @[OBJECT], method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'New', new_[OBJECT]_path %>
 
-	method: :delete, data: { confirm: "Are you Sure?" } 
-
-
+```
