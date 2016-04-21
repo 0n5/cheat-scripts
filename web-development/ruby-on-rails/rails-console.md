@@ -8,6 +8,8 @@ Rails Console
 
 	$ [MODEL].delete_all   # deletes all models in db
 	
+	$ Rails.application.config.session_options[:key].sub(/^_/,'').sub(/_session/,'')
+		# prints out application name
 
 #### Running scripts
 
