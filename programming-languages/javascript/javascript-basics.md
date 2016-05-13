@@ -1,6 +1,8 @@
 JavaScript
 ==========
 
+[JavaScript Beautifier](http://jsbeautifier.org/)
+
 #### Functions
 
 ##### Encapsulation
