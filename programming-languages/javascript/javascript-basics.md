@@ -16,7 +16,7 @@ education.display()  // call function
 
 #### Arrays
 
-#### Control Flow
+##### Control Flow
 
 ``` javascript
 
@@ -57,7 +57,7 @@ adds element to the front of an array
 
     myArray.unshift(["Paul", 35]);
 
-#### Length
+##### Length
 
 	var workLength = workArray.length;  // sets variable to length of array
 
@@ -143,7 +143,7 @@ var bio = {
 	},
 	"welcomeMessage": "Looking for full-time remote development opportunities",
 	"skills": [
-		"Front End Development", "Full Stack Development", "DevOps", "Information Security", "Forensics", "OPSEC", "OSINT"
+		"Front End Development", "Full Stack Development", "DevOps", "Information Security"
 	],
 	"biopic": "https://avatars0.githubusercontent.com/u/5743472?v=3&s=460"
 };
