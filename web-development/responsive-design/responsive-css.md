@@ -12,7 +12,7 @@ Using Bower & NVM
 ``` html
 
 <head>
-<link rel="stylesheet" type="text/css" href="normalize.css">
+	<link rel="stylesheet" href="normalize.css">
 </head>
 
 ```
@@ -33,7 +33,6 @@ CSS:
 	box-sizing: border-box;
 	width: 50%;
 	float: left;
-
 }
 
 ```
