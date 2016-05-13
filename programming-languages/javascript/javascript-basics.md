@@ -16,7 +16,7 @@ education.display()  // call function
 
 #### Arrays
 
-##### Control Flow
+##### For Loop
 
 ``` javascript
 
