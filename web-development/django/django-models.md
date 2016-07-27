@@ -38,3 +38,24 @@ admin.site.register(TABLE_B)
  
     $ python showmigrations                  # displays migration & version info
     $ python sqlmigrate [APP] [VERSION]      # displays SQL for migration
+
+
+#### Model Field Types (common)
+
+* BooleanField()
+* CharField(max_length=None)
+* DateField()
+* DateTimeField()
+* DecimalField(max_digits=None, decimal_places=None)
+* EmailField()  # max_length=254
+* FileField()  # file upload field
+* FloatField()
+* ImageField()
+* IntegerField()  # -2147483648 to 2147483647
+* SlugField()   # max_length=50
+* SmallIntegerField()   # -32768 to 32767
+* TextField()
+* URLField()  # max_length=200
+* ForeignKey(Model) # many to one relationship
+* ManyToManyField(Model)  # many to many relationship
+* OneToOneField(Model)   # one to one relationship
