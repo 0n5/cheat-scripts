@@ -39,8 +39,23 @@ admin.site.register(TABLE_B)
     $ python showmigrations                  # displays migration & version info
     $ python sqlmigrate [APP] [VERSION]      # displays SQL for migration
 
+    $ python manage.py migrate [APP] zero    # rolls back to version 0, just delete old versions
+    
+    $ python manage.py flush                 # wipes data in database 
 
 #### Model Field Types (common)
+
+add verbose field name as a parameter to set Field Label Name<br>
+ForeignKey and ManyToManyField require Model to be first arg, use verbose_name
+
+``` python
+
+first_name = models.CharField("person's first name", max_length=30)
+ManyToManyField(Model, verbose_name="Director") 
+
+```    
+
+Fields are blank=False by default, pass in blank=True arg to allow empty field
 
 * BooleanField()
 * CharField(max_length=None)
@@ -59,3 +74,16 @@ admin.site.register(TABLE_B)
 * ForeignKey(Model) # many to one relationship
 * ManyToManyField(Model)  # many to many relationship
 * OneToOneField(Model)   # one to one relationship
+
+ 
+#### ImageField Paths 
+
+    $ nano [PROJECT]/settings.py
+
+``` python 
+
+ENV_PATH = os.path.abspath(os.path.dirname(__file__))
+MEDIA_ROOT = os.path.join(ENV_PATH, 'media/')
+MEDIA_URL = 'media/'
+
+```

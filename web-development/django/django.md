@@ -38,11 +38,3 @@ INSTALLED_APPS = [
 ]
 
 ```
-
-#### Enable Admin
-
-    $ python manage.py createsuperuser
-
-navigate to [SITE]/admin
-
-
