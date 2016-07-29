@@ -87,3 +87,33 @@ MEDIA_ROOT = os.path.join(ENV_PATH, 'media/')
 MEDIA_URL = 'media/'
 
 ```
+
+#### QuerySet
+
+Drop into Django shell to test Models, query from cli 
+
+    $ python manage.py shell
+    >>> from django.db import models
+    >>> from [APP].models import [TABLE]
+
+All Objects:
+
+    >>> [TABLE].objects.all()
+    
+    >>> for x in [TABLE].objects.():
+            print(x.[TABLE])
+
+Order By:
+
+    >>> [TABLE].objects.order_by('[COLUMN')
+
+Get:
+
+    >>> [TABLE].objects.get(pk=1)  # returns object with primary key == 
+
+Filter:
+
+    >>> [TABLE].objects.filter([COLUMN]__startswith='E')
+        # returns all objects whose Column startswith character 'E'
+    >>> [TABLE].objects.filter([COLUMN]__exact=[VALUE]):
+        # returns only exact matches
