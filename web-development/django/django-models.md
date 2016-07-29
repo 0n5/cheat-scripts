@@ -109,7 +109,7 @@ Order By:
 
 Get:
 
-    >>> [TABLE].objects.get(pk=1)  # returns object with primary key == 
+    >>> [TABLE].objects.get(pk=1)  # returns object with primary key == 1
 
 Filter:
 
