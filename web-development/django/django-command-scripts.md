@@ -38,7 +38,7 @@ class Command(BaseCommand):
         # some logic
 
     def handle(self, *args, **options):
-        self._create_movie()
+        self._some_function()
 
 ```
 
