@@ -16,8 +16,10 @@ Ubuntu
 #### psql commands
 
 	\i [FILE.sql]    # initialize database with sql file
+	\l				 # list databases
 	\c [DATABASE]    # connect to database
-	\dt              # show tables
+	\dt              # describe tables
+	\du 			 # describe users
 	\q               # quit postgres client               
 
 #### Create Database
@@ -46,6 +48,12 @@ Delete Records
 
 	$ psql
 	# DROP DATABASE [DATABASE]
+
+
+#### Delete Users
+
+	$ psql
+	# DROP USER [USER]
 
 #### Grant permissions
 
