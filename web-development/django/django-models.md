@@ -11,7 +11,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 
-class [TABLE](models.Model):
+class [MODEL](models.Model):
     [FIELD_NAME] = models.[FIELD_TYPE](max_length=255)
 
     def __unicode__(self):
@@ -94,26 +94,51 @@ Drop into Django shell to test Models, query from cli
 
     $ python manage.py shell
     >>> from django.db import models
-    >>> from [APP].models import [TABLE]
+    >>> from [APP].models import [MODEL]
 
 All Objects:
 
-    >>> [TABLE].objects.all()
+    >>> [MODEL].objects.all()
     
-    >>> for x in [TABLE].objects.():
-            print(x.[TABLE])
+    >>> for x in [MODEL].objects.():
+            print(x.[MODEL])
 
 Order By:
 
-    >>> [TABLE].objects.order_by('[COLUMN')
+    >>> [MODEL].objects.order_by('[COLUMN')
 
 Get:
 
-    >>> [TABLE].objects.get(pk=1)  # returns object with primary key == 1
+    >>> [MODEL].objects.get(pk=1)  # returns object with primary key == 1
 
 Filter:
 
-    >>> [TABLE].objects.filter([COLUMN]__startswith='E')
+    >>> [MODEL].objects.filter([COLUMN]__startswith='E')
         # returns all objects whose Column startswith character 'E'
-    >>> [TABLE].objects.filter([COLUMN]__exact=[VALUE]):
+
+    >>> [MODEL].objects.filter([COLUMN]__exact=[VALUE]):
         # returns only exact matches
+
+    >>> if [MODEL].objects.filter([FIELD]=[VALUE]).count() != 0:
+    >>>     do something...
+        # query that checks if there are any objects after filtering 
+        
+Create:
+
+Only for one-to-one and one-to-many relationships<br>
+Must save objects first and then assign for many-to-many 
+
+    >>> create_object = [MODEL].objects.create([FIELD]=[VALUE],[FIELD]=[VALUE])
+    >>> [MODEL].save()
+
+
+Create Many-to-many object
+
+    >>> new_many2many_object = [MODEL]([FIELD]=[VALUE])
+    >>> new_many2many_object.save()
+
+
+Add Many-to-many relationship to another object
+
+    >>> many2many_query = [MODEL].objects.get([FIELD]=[VALUE])
+    >>> other_object.many2many_query.add([NEW_OBJECT])
