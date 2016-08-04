@@ -85,7 +85,7 @@ REST_FRAMEWORK = {
 
 add to the file:
 
-```
+``` python 
 from rest_framework import routers, serializers, viewsets, generics
 from [APP].models import *
 
