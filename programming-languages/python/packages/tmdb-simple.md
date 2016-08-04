@@ -2,7 +2,7 @@ TMDB simple
 ==========
 
 Python package URL: [https://pypi.python.org/pypi/tmdbsimple](https://pypi.python.org/pypi/tmdbsimple)<br>
-Retrieve [https://www.themoviedb.org/faq/api?language=en](TMDB API key) first
+Retrieve [https://www.themoviedb.org/faq/api](TMDB API key) first
 
 #### Installation
 
