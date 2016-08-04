@@ -51,6 +51,34 @@ REST_FRAMEWORK = {
 
 ```
 
+
+#### JSONP support
+
+    $ pip install djangorestframework-jsonp
+    $ nano settings.py
+    
+add to the REST_FRAMEWORK dict:
+
+``` python 
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ],
+        'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework_jsonp.renderers.JSONPRenderer',
+        # jsonp
+        'rest_framework.renderers.BrowsableAPIRenderer',
+        # browsable API
+    ),
+
+}
+
+```
+
+
 #### Serializers 
 
     $ nano serializers.py
@@ -134,3 +162,4 @@ router.register(r'[URL_PATH]', aViewSet, '[BASE_NAME_ARGUMENT')
 # base_name argument can be anything in this case
 
 ```
+
