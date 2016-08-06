@@ -1,6 +1,12 @@
 Django
 ======
 
+#### dependencies
+
+    $ sudo apt-get install python-pip python-dev build-essential 
+    $ sudo pip install --upgrade pip 
+    $ sudo apt-get install libpq-dev python-dev
+
 #### Installation
 
     $ pip install django
