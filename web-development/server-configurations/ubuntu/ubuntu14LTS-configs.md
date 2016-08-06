@@ -22,19 +22,7 @@ ChallengeResponseAuthentication no
 
     $ service ssh restart
     
-#### No root login
 
-    $ nano /etc/ssh/sshd_config
-
-Change to:
-
-```
-PermitRootLogin no
-Save and exit.
-```
-
-    $ sudo service ssh restart
-    
     
 #### Network Security
 
