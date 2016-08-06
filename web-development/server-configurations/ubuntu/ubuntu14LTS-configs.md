@@ -106,7 +106,10 @@ Allow to port from IP address:
 
     $ ufw allow from [IP] to any port [PORT]
 
+Enable:
 
+    $ ufw enable
+    $ ufw status
 
 #### Fail2ban
 
