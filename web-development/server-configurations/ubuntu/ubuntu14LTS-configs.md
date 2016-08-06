@@ -120,7 +120,9 @@ configure:
 
     $ cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
 
-
+start:
+    
+    $ sudo service fail2ban start
 
 
 
