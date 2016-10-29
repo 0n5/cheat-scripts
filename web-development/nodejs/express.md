@@ -35,7 +35,11 @@ app.get('/names/:id', function(req,res){
 
 app.get('/names', function(req,res) {
    res.json(names); 
+    /*
+    to test error messages comment above response out and use:
+    res.json(500, { error: 'Some error message'});
     
+    */
 });
 
 app.listen(8080);
