@@ -140,13 +140,61 @@ In Index.html
 
 #### Values
 
+Cannot be injected into config()
+
+In services/values.js:
+
 ```javascript
 
 angular.module['MODULE'].value('key', 'value');
 
 ```
 
+ex. using object literal
+
+```javascript
+
+angular.module['MODULE'].value('someSettings', {
+    
+   title: 'Some Title',
+   year: 'Some Year'
+    
+});
+
+```
+
+Register value in Controller:
+
+``` javascript
+
+var [CONTROLLER_NAME] = function ($scope, someSettings)
+    $scope.someSettings = someSettings;
+
+...
+
+[CONTROLLER_NAME].$inject = ['$scope', 'someSettings']
+
+
+```
+
+
+in View:
+
+
+```html
+
+<h2>{{ someSettings.title }}</h2>
+
+
+```
+
+
 #### Constant
+
+Can be injected into config()
+
+In services/constants.js:
+
 
 ```javascript
 
@@ -154,6 +202,34 @@ angular.module['MODULE'].constant('key', 'value');
 
 
 ```
+
+
+ex. using object literal
+
+```javascript
+
+angular.module['MODULE'].constant('someSettings', {
+    
+   title: 'Some Title',
+   year: 'Some Year'
+    
+});
+
+```
+
+inject into config in app.js:
+
+```javascript
+
+app.config(function($routeProvider, someSettings) {
+    $routeProvider
+        ...
+})
+
+```
+
+
+
 
 #### Debugging
 
