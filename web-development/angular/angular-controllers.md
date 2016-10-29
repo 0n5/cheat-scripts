@@ -94,7 +94,7 @@ angular.module('[MODULE]').
 ```
 
 
-##### ControllerAs syntax
+#### ControllerAs syntax
 
 In index.html
 

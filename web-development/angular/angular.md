@@ -24,16 +24,41 @@ Installation Structure:
     ----package.json
     
 
+or CDN
+
+
+```html
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+        <script src="app.js"></script>
+        <script src="controllers/controller.js"></script>
+        <script src="directives.js"></script>
+        <script src="filters.js"></script>
+        <script src="services/services.js"></script>
+        
+    </head>
+    <body>
+	  </body>
+</html>
+
+```
+
+
 #### App Structure
 
     App-Root-Folder/
     --css/
-    --js/
-    ----app.js
+    --app.js
+    --directives.js
+    --filters.js
+    --controllers/
     ----controller.js
-    ----directives.js
-    ----filters.js
+    --services/
     ----services.js
+    ----factories.js
     --index.html
     
 #### angular-seed
@@ -54,29 +79,6 @@ save and exit.
     $ npm start     # starts web server and app
 
 visit [PROJECT_IP]/app
-
-
-#### Usage
-
-
-``` html
-
-<!DOCTYPE html>
-<html>
-    <head>
-        <script src="bower_components/angular/angular.min.js"></script>
-        <script src="js/app.js"></script>
-        <script src="js/controller.js"></script>
-        <script src="js/directives.js"></script>
-        <script src="js/filters.js"></script>
-        <script src="js/services.js"></script>
-        
-    </head>
-    <body>
-	  </body>
-</html>
-
-```
 
 
 #### Attributes
@@ -136,114 +138,22 @@ In Index.html
 
 ```
 
+#### Values
 
-#### Scope
+```javascript
 
-in module script (app.js), ties the controller to the view 
-
-``` javascript
-
-var [APPNAME] = angular.module('[APPNAME]',[]);  
-
-[APPNAME].controller('CONTROLLER_NAME', ['$scope', function($scope) {  
-// register controller and create controller object 
-
-
-$scope.greeting = 'Hola!'; 
-// attach greeting property to scope w/ string
-}]);  
+angular.module['MODULE'].value('key', 'value');
 
 ```
 
-attach controller to the DOM and data bind property to template
+#### Constant
 
-``` javascript
+```javascript
 
- <div ng-app="[APPNAME]" ng-controller="CONTROLLER_NAME">  
-  {{ greeting }}  
+angular.module['MODULE'].constant('key', 'value');
 
-<script src="app.js"></script>
 
 ```
-
-Scope with object & properties
-
-``` javascript
-
-phonecatApp.controller('PhoneListCtrl', function($scope) {
-  $scope.phones = [
-    {'name': 'Nexus S',
-     'snippet': 'Fast just got faster with Nexus S.'},
-    {'name': 'Motorola XOOM™ with Wi-Fi',
-     'snippet': 'The Next, Next Generation tablet.'},
-    {'name': 'MOTOROLA XOOM™',
-     'snippet': 'The Next, Next Generation tablet.'}
-  ];
-  
-```
-
-in index.html
-
-``` html
-
-<body ng-controller="PhoneListCtrl">
-
-  <ul>
-    <li ng-repeat="phone in phones">
-      <span>{{phone.name}}</span>
-      <p>{{phone.snippet}}</p>
-    </li>
-  </ul>
-
-```
-
-
-#### Images
-
-``` html
-
-<img ng-src="{{phone.imageUrl}}" alt="{{phone.name}}"></a>
-
-```
- 
-
-#### Full Text search
-
-in index.html
-
-``` html
-
-Search: <input ng-model="query">
-
-  <li ng-repeat="object in list | filter:query">
-
-  </li>
-
-```  
-  
-  
-#### Dynamic Titles
-
-Move controller to the <html> element
-
-in index.html
-
-``` html
-
-<html ng-controller="PhoneListCtrl">
-...
-
-<title>Current Object: {{query}}</title>
-...
-
-Search: <input ng-model="query">
-
-  <li ng-repeat="object in list | filter:query">
-
-  </li>
-
-```
-
 
 #### Debugging
 

@@ -11,7 +11,7 @@ AngularJS Filters
 
 in index.html
 
-``` html
+```html
 
 Sort by:
 <select ng-model="orderProp">
@@ -24,3 +24,18 @@ Sort by:
   </li>
 
 ```
+
+
+#### Full Text search
+
+in index.html
+
+```html
+
+Search: <input ng-model="query">
+
+  <li ng-repeat="object in list | filter:query">
+
+  </li>
+
+```  

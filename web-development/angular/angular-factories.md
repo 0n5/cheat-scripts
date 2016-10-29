@@ -2,19 +2,28 @@ AngularJS Factories
 ===================
 
 
-#### Factory Creation
+register factory in html
+
+<script src="services/[FACTORY_FILE_NAME].js"></script>
+
+
+##### Standard Factory Creation
+
+
+in services/[FACTORY_FILE_NAME].js
 
 ```javascript
 
 (function () {
     
-   var [FACTORY_NAME] = function () {
+    var [FACTORY_NAME] = function () {
        var names = [...];
        var factory = { };
        factory.getSomething = function () {
            return names;
-       }
-   };
+       };
+    }
+};
    
    return factory
 
@@ -25,7 +34,10 @@ anguar.module(['MODULE']).factory('[FACTORY_NAME]', FACTORY_NAME);
 
 ```
 
-alternate factory creation:
+##### Alternate Factory Creation:
+
+
+in services/[FACTORY_FILE_NAME].js
 
 
 ```javascript
@@ -60,7 +72,7 @@ var [CONTROLLER_NAME] = function ($scope, [FACTORY_NAME]) {
     function init(){
         $scope.names = [FACTORY_NAME].getSomething();
     }
-    
+    init();
 };
 
 [CONTROLLER_NAME].$inject = ['$scope', '[FACTORY_NAME]'];
