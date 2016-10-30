@@ -81,23 +81,6 @@ save and exit.
 visit [PROJECT_IP]/app
 
 
-#### Attributes
-
-Directives are the camel case of the attribute 
-
-    Attributes: ng-app
-    Corresponding Directive: NgApp
-
-    ng-app="[APPNAME]"                # tells Angular what the root element of the app is
-    ng-init                           # used to initialize variables
-    ng-model="[VARIABLE]"             # allows you store and update values typed in forms by users
-    ng-repeat                         # Loops thru ng-init variables
-    ng-controller="[CONTROLLER]"      # attach controller to the DOM
-    ng-click="[FUNCTION]()"           # evaluates expression when clicked
-    ng-src="{{ [IMAGE_URL_OBJECT] }}" # renders the content of the expression in a link
-    ng-view                           # includes the view template
-
-
 #### Modules
 
 In Angular 1.5 you must use module with controller
