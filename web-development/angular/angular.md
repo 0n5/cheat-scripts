@@ -121,6 +121,30 @@ In Index.html
 
 ```
 
+
+#### $watch
+
+variables are watched automatically when binding in HTML 
+eg:
+
+```html
+
+    {{ someVariable }}
+
+```
+
+Manually watching variable in Controller
+
+```javascript
+
+$scope.$watch('[WATCHED_VARIABLE]', function() {
+    // do something if variable changes    
+}
+
+```
+
+
+
 #### Values
 
 Cannot be injected into config()

@@ -24,6 +24,31 @@ Directives are the camel case of the attribute
     ng-view                           # includes the view template
 
 
+#### Input Directives
+
+  ng-required="boolean"  # sets required attribute
+  ng-minlength="number"  # value not less than min length
+  ng-maxlength="number"  # value does not exceed max length
+  ng-pattern="string"    # value matches regex
+  ng-change="string"     # executed when input changed by user
+  ng-trim="boolean"      # if true will trim output
+
+eg:
+
+```html
+
+<form>
+
+    <label>
+       Last name:
+       <input type="text" name="lastName" ng-model="user.last"
+       ng-minlength="3" ng-maxlength="10">
+    </label>
+
+</form>
+
+```
+
 #### Custom Directives
 
 in [DIRECTIVE_NAME].js

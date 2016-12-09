@@ -3,6 +3,39 @@ JavaScript
 
 [JavaScript Beautifier](http://jsbeautifier.org/)
 
+#### Scope
+
+global scope
+
+``` javascript
+
+var someVariable = "test";  // global scope
+var someFunction = function() {
+	// function curly braces create scope paramaters
+	
+	var someLocalVariable = "local";   // local scope
+	
+}
+
+```
+
+
+#### Methods
+
+``` javascript
+
+var contact = {
+// anonymous function 
+  fullName: function() { 
+  	var firstName = "Andrew";
+  	var lastName = "Chalkley";
+  	console.log(firstName + " " + lastName);
+  }
+}
+
+```
+
+
 #### Functions
 
 ##### Encapsulation
@@ -15,6 +48,7 @@ education.display = function() {
 education.display()  // call function
 
 ```
+
 
 #### Arrays
 
