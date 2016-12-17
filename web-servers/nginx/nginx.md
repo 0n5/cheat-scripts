@@ -32,7 +32,7 @@ add to the server block
 
 ```
 	server {
-	    error_page 404 /404.html;
+	    error_page 401 403 404 /404.html;
 	    location = /404.html {
 	            root /etc/nginx/[ERROR_PAGE_DIRECTORY]/;
 	            internal;
