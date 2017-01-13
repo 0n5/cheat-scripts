@@ -1,4 +1,0 @@
-AngularJS Views
-===============
-
-TODO
