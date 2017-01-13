@@ -1,0 +1,31 @@
+Nginx + Rails Configuration
+===========================
+
+``` 
+
+upstream app {
+    server unix:path/to/unicorn.sock fail_timeout=0;
+}
+
+server {
+    listen 80;
+    # listen 8080;  # cloud9 port
+    server_name localhost;
+    # server_name *.c9users.io; # cloud9 servername  
+    root /path/to/app/public;
+
+    try_files $uri/index.html $uri @app;
+
+    location @app {
+        proxy_pass http://app;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $http_host;
+        proxy_redirect off;
+    }
+
+    error_page 500 502 503 504 /500.html;
+    client_max_body_size 4G;
+    keepalive_timeout 10;
+}
+
+```
