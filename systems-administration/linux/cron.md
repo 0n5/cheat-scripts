@@ -9,7 +9,7 @@ Cron
 
 #### Edit Crontab
 
-	$ crontab -e   # opens dialog to select cron editor
+	crontab -e   # opens dialog to select cron editor
 
 #### Crontab configuration
 

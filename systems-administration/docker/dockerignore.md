@@ -1,6 +1,8 @@
 .dockerignore cheats
 ====================
 
+(May be out of date, uses pre Docker Compose versions)
+
 #### .dockerignore file ex:
 
 	*/temp*      - excludes any file starting with temp in any dir below root

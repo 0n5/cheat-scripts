@@ -1,11 +1,14 @@
 Dockerfile basics cheats
 ====================
 
+(May be out of date, uses pre Docker Compose versions)
+
 #### Dockerfile syntax ex:
 	
+```
 	# Version: 0.1
 	FROM ubuntu: 14.04
-	MAINTAINER [Your Name] "your_email@address.com" 
+	MAINTAINER [NAME] "[EMAIL]" 
 	ENV REFRESHED_AT 2015-8-22
 	RUN apt-get update
 	RUN apt-get install -y nginx
@@ -21,6 +24,7 @@ Dockerfile basics cheats
 	EXPOSE 80
 	# This is a comment 
 
+```
 
 #### Dockerfile Instructions:
 
@@ -39,18 +43,17 @@ Dockerfile basics cheats
 	COPY - copies files from build environment into image
 	ONBUILD - executes a trigger on an image
 
-
 #### Dockerfile commands:
 
-	$ docker build -t ="[REPOSITORY/IMAGE]" .    # executes intructuions in docker file 
+	docker build -t ="[REPOSITORY/IMAGE]" .      # executes intructuions in docker file 
 												 # -t flag names the image
 												 # . looks for dockerfile in local directory
 
-    $ docker build -t ="[REPOSITORY/IMAGE]" \
+	docker build -t ="[REPOSITORY/IMAGE]" \
       git@github.com:[REPOSITORY/DIRECTORY]      # looks for dockerfile in github repo
 
-    $ docker build -t ="[REPOSITORY/IMAGE]" \
+	docker build -t ="[REPOSITORY/IMAGE]" \
       -f /[PATH_TO_FILE]						 # looks for dockerfile at a certain path
 
-    $ docker build --no-cache \
+	docker build --no-cache \
      -t ="[REPOSITORY/IMAGE]" .                  # builds without using the cached layers
