@@ -8,12 +8,14 @@ IPtables
 	iptables -L -v                  # list all iptables rules
 	iptables -F                     # flush iptables rules
 
-#### Allow SSH port 22 inbound
+#### SSH (Port 22)
+
+Allow inbound
 
 	iptables -A INPUT -i eth0 -p tcp --dport 22 -m state --state NEW,ESTABLISHED -j ACCEPT
 	iptables -A OUTPUT -o eth0 -p tcp --sport 22 -m state --state ESTABLISHED -j ACCEPT
 
-#### Allow SSH port 22 outbound
+Allow outbound
 
 	iptables -A OUTPUT -o eth0 -p tcp --dport 22 -m state --state NEW,ESTABLISHED -j ACCEPT
 	iptables -A INPUT -i eth0 -p tcp --sport 22 -m state --state ESTABLISHED -j ACCEPT
@@ -38,10 +40,3 @@ IPtables
 #### Unblock IP Address
 
 	iptables -D INPUT -s [IP_ADDRESS] -j DROP
-
-
-
-
-
-
-

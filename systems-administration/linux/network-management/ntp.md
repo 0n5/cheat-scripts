@@ -3,19 +3,20 @@ NTP (network time protocol)
 
 #### Installation
 
-	$ apt-get install ntp
+	apt-get install ntp
 
 #### Configuration
 
-	$ nano /etc/ntp.conf
+	nano /etc/ntp.conf
 
 Change server pool to:
 
+```
 	server 0.us.pool.ntp.org
 	server 1.us.pool.ntp.org
 	server 2.us.pool.ntp.org
 	server 3.us.pool.ntp.org
 
-Save and exit. 
+```
 
-	$ service ntp restart
+	service ntp restart
