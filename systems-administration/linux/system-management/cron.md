@@ -1,6 +1,8 @@
 Cron
 ====
 
+Time based scheduler
+
 #### Cron file locations
 
 	/etc/crontab      # editable only by root

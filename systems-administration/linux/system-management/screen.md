@@ -1,7 +1,14 @@
-Screen
+screen
 ======
 
-	$ screen   # starts screen process to launch multiple terminals
+Manage shell windows and sessions
+
+
+#### Usage
+
+	screen   # starts screen process to launch multiple terminals
+
+#### Options
 
 	ctl + a + c  # spawns new window
 	ctl + a + n  # toggles between windows
