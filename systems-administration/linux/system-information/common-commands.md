@@ -1,5 +1,5 @@
-System Information
-==================
+Common System Information Commands
+==================================
 
 #### Version information
 

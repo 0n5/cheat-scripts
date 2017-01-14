@@ -1,5 +1,5 @@
-Top command management
-======================
+top
+===
 
 Shows all running processes
 
@@ -21,7 +21,7 @@ load average .00 .01 .05:
 
 #### Usage
 
-	shift m       # orders by memory usage
-	shift p       # orders by cpu usage
+	shift m        # orders by memory usage
+	shift p        # orders by cpu usage
 	r[PID] -20     # renice PID to the highest priority
 	k[PID]         # kill the process in top, 15: kill when finished, 9: kill process and force quit
