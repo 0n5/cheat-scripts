@@ -3,18 +3,18 @@ Nginx server block cheats
 
 #### Single Default Server Block
 
-	$ mkdir -p /var/www/example.com/html
-	$ chown -R $USER:$USER /var/www/example.com/html
-	$ chmod -R 755 /var/www
+	mkdir -p /var/www/example.com/html
+	chown -R $USER:$USER /var/www/example.com/html
+	chmod -R 755 /var/www
 
 Create sample HTML page for testing
 
-	$ nano /var/www/example.com/html/index.html
+	nano /var/www/example.com/html/index.html
 
 Save and exit.
 
-	$ cp /etc/nginx/sites-available/default /etc/nginx/sites-available/example.com
-	$ nano /etc/nginx/sites-available/example.com
+	cp /etc/nginx/sites-available/default /etc/nginx/sites-available/example.com
+	nano /etc/nginx/sites-available/example.com
 
 Edit the file to look like this: 
 	
@@ -34,9 +34,9 @@ Edit the file to look like this:
 
 Save and exit.
 
-	$ ln -s /etc/nginx/sites-available/example.com /etc/nginx/sites-enabled/
-	$ rm /etc/nginx/sites-enabled/default
-	$ nano /etc/nginx/nginx.conf
+	ln -s /etc/nginx/sites-available/example.com /etc/nginx/sites-enabled/
+	rm /etc/nginx/sites-enabled/default
+	nano /etc/nginx/nginx.conf
 
 Uncomment this line:
 
@@ -44,7 +44,7 @@ Uncomment this line:
 
 Save and exit.
 
-	$ service nginx restart
+	service nginx restart
 
 Visit example.com/	
 

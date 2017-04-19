@@ -10,6 +10,8 @@ server {
 
 	server_tokens        off;
 	
+}
+
 ```
 
 #### Block User Agents, Bad Bots
