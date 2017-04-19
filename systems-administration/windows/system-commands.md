@@ -15,27 +15,26 @@ Windows System Commands
 
 #### Users
 
-	> echo %USERNAME%  # prints out current user
+	> echo %USERNAME%    # prints out current user
 
-	lusrmgr.msc        # local user manager
+	> lusrmgr.msc        # opens up local user manager
 
 
 #### Services
 
-	services.msc    # services control panel
+	> services.msc    # opens up services control panel
 
 
 #### Proccesses
 
-	taskmgr.exe       # task manager
-
+	> taskmgr.exe     # opens up task manager
 	> tasklist /svc   # show processes and services
 	> tasklist /m     # show processes and dlls
 
 
 #### Events
 
-	eventvwr.msc   #event viewer
+	> eventvwr.msc    # opens event viewer
 
 
 #### Networking
@@ -61,5 +60,3 @@ Windows System Commands
 
 	> reg query HKLM /f password /t REG_SZ /s  # search registry for pwd
 	> reg save HKLM\Security security.hive     # dumps security hive
-
-
