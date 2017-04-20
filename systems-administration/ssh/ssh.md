@@ -1,5 +1,5 @@
-SSH cheats
-==========
+SSH
+===
 
 #### Create key pair
 

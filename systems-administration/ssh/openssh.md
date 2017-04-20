@@ -1,6 +1,19 @@
-OpenSSH cheats
-==============
+OpenSSH
+=======
 
-#### Install open ssh server
+#### Install
 
-	$ sudo apt-get install openssh-server
+    apt-get install openssh-server
+
+#### Config file
+
+    nano /etc/ssh/sshd_config
+
+#### Commands
+
+    service ssh status
+    service ssh restart
+
+
+
+    
