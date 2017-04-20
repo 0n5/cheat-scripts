@@ -1,7 +1,7 @@
 Network Adapters
 ================
 
-##### Change mac address of wireless card
+#### Change mac address of wireless card
 
 	ifconfig wlan0 down
 	ifconfig wlan0 hw ether 00:00:00:00:00:00
