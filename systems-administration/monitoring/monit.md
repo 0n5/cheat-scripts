@@ -3,12 +3,12 @@ Monit
 
 #### Installation
 
-	$ apt-get install monit
+	apt-get install monit
 
 #### Enable Web Interface
 
-	$ service monit stop
-	$ nano /etc/monit/monitrc
+	service monit stop
+	nano /etc/monit/monitrc
 
 Add to the file
 
@@ -20,8 +20,8 @@ Add to the file
 
 Save and exit. 
 
-	$ service monit reload
-	$ service monit start
+	service monit reload
+	service monit start
 
 Visit [IP_ADDRESS:2812] <br>
 Enter Username and Password from monitrc file
@@ -29,8 +29,8 @@ Enter Username and Password from monitrc file
 
 #### Elasticsearch monitoring
 
-	$ service monit stop
-	$ nano /etc/monit/monitrc
+	service monit stop
+	nano /etc/monit/monitrc
 
 Add to the file:
 
@@ -40,8 +40,8 @@ Add to the file:
 
 Save and exit. 
 
-	$ service monit reload
-	$ service monit start
+	service monit reload
+	service monit start
 
 
 #### Slack Integration
@@ -52,7 +52,7 @@ Click Incoming Webhooks<br>
 Click Add button<br>
 Notate the Link created
 
-	$ nano slack.rb
+	nano slack.rb
 
 Add to the file:
 
@@ -77,8 +77,8 @@ puts response.body
 
 Save and exit.
 
-	$ service monit stop
-	$ nano /etc/monit/monitrc
+	service monit stop
+	nano /etc/monit/monitrc
 
 Add to the file:
 
@@ -94,6 +94,6 @@ if using RVM instead indicate full path to ruby
 	
 Save and exit.
 
-	$ service monit reload
-	$ service monit start
+	service monit reload
+	service monit start
 
