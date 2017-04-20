@@ -11,6 +11,6 @@ Filters and transforms text
 
 #### Usage
 
-	$ sed 's/[OLD]/[NEW]/'  [FILE]             # replaces first instance of oldstring with newstring
-	$ sed 's/[OLD]/[NEW]/g' [FILE]             # replaces all instances of oldstring with newstring
-	$ sed 's/[OLD]/[NEW]/w [NEW_FILE]' [FILE]  # writes the modified stream to a new file
+	sed 's/[OLD]/[NEW]/'  [FILE]             # replaces first instance of oldstring with newstring
+	sed 's/[OLD]/[NEW]/g' [FILE]             # replaces all instances of oldstring with newstring
+	sed 's/[OLD]/[NEW]/w [NEW_FILE]' [FILE]  # writes the modified stream to a new file
