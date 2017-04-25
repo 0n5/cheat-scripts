@@ -6,7 +6,7 @@ Groups
 	groupadd group_name            # create group
 	cut -d: -f1 /etc/group | sort  # list all groups sorted by name
 
-#### Group / User Maintenance
+#### Add User to Group
 
 	usermod -G [GROUPNAME] [USERNAME]        # adds user to group or changes current group
 	usermod -G [GROUP1],[GROUP2] [USERNAME]  # adds user to two groups
