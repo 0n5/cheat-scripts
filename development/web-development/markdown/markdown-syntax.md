@@ -80,6 +80,11 @@ horizontal rule:
 	___ or more 
 
 
+Linebreaks:
+
+	this is a single line..          # two trailing spaces after line will break
+	this is a another single line    # second line 
+
 #### Codeblocks:
 
 preformatted: indent or 4 spaces
