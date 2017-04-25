@@ -4,6 +4,10 @@ screen
 Manage shell windows and sessions
 
 
+#### Install
+
+	apt-get install screen
+
 #### Usage
 
 	screen   # starts screen process to launch multiple terminals

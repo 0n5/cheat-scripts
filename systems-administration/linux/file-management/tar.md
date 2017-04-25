@@ -12,3 +12,4 @@ tar (tape archive)
 	tar xf [FILE].tar        # extract tar
 	tar xzf [FILE].tar.gz    # extract tar.gz
 	tar xjf [FILE].tar.bz2   # extract tar.bz2
+	

@@ -5,7 +5,6 @@ Front end for apt
 
 #### Usage
 
-
 	aptitude  # launches GUI
 
 #### Install
