@@ -1,7 +1,7 @@
 Cryptography
 ============
 
-Stream Cipher: bits of data encrypted in a continious stream, fast, XOR<br>
+Stream Cipher: bits of data encrypted in a continious stream, fast, XOR
 
 #### Symmetric  algorithms
 
@@ -26,8 +26,8 @@ Asymmetric Encryption: key pair generated together. public key encrypts, private
 
 #### Hash algorithms:
 
-Hash algorithm: one way function, takes an input and produces a string (hash)<br>
-hashes are susceptible to collisions, two or more files resulting in same hash output<br>
+Hash algorithm: one way function, takes an input and produces a string (hash)  
+hashes are susceptible to collisions, two or more files resulting in same hash output  
 Salt: collection of random bits used as a key with hash.
 
 	MD5       # 128 bit output as a 32 digit hex (obsolete)
@@ -63,10 +63,10 @@ Encryption of digital cert is done with private key, public key used to verify a
 
 #### Attacks
 
-Known plaintext attack: attacker has both plaintext and ciphertext and scans for repeatable sequences<br>
-Chosen plaintext attack: attacker encrypts multiple plaintext copies to gain the key<br>
-Ciphertext only attack: has serveral copies of message encrypted in same way, finds repeating code<br>
-Replay attack: Done with MITM, repeats portions of message back to system to trick it into communicating <br>
+Known plaintext attack: attacker has both plaintext and ciphertext and scans for repeatable sequences  
+Chosen plaintext attack: attacker encrypts multiple plaintext copies to gain the key  
+Ciphertext only attack: has serveral copies of message encrypted in same way, finds repeating code  
+Replay attack: Done with MITM, repeats portions of message back to system to trick it into communicating  
 
 
 
