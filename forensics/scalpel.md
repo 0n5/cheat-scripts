@@ -3,11 +3,11 @@ Scalpel
 
 #### Installation
 
-	$ apt-get install scalpel
+	apt-get install scalpel
 
 #### Configuration
 
-	$ nano /etc/scalpel/scalpel.conf
+	nano /etc/scalpel/scalpel.conf
 
 edit config file and uncoment extension type to look for:
 
@@ -19,10 +19,10 @@ edit config file and uncoment extension type to look for:
 
 #### Carve out unallocated space
 
-	$ apt-get install sleuthkit
-	$ blkls -a [IMAGE] > [OUTPUT_IMAGE]
+	apt-get install sleuthkit
+	blkls -a [IMAGE] > [OUTPUT_IMAGE]
 
 
 #### Carve files
 
-	$ scalpel [IMAGE] -o [OUTPUT_DIR]
+	scalpel [IMAGE] -o [OUTPUT_DIR]
