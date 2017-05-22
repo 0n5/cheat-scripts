@@ -1,6 +1,8 @@
 Symfony Controllers
 ===================
 
+Controllers are stored at /src/AppBundle/Controller
+
 #### Creating Controller 
 
     cd /src/AppBundle/Controller/
