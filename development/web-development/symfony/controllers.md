@@ -12,6 +12,7 @@ Controllers are stored at /src/AppBundle/Controller
 
 namespace AppBundle\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 // adds use of Route component
 use Symfony\Component\HttpFoundation\Response;

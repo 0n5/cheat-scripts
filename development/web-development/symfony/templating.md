@@ -87,3 +87,30 @@ Looping
 
 
 ```
+
+
+Inheriting Layout
+
+default template is base.html.twig
+
+
+```html
+
+{% extends '[TEMPLATE_NAME].html.twig' %}
+
+
+
+{% block title %} [PAGE_TITLE]  {% endblock %}
+/* overides the page title of the template that is being extended */
+
+
+{% block body %}
+/* overides the block body of the template that is being extended */
+
+    ...
+
+{% endblock %}
+
+
+
+```

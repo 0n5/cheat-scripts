@@ -12,6 +12,12 @@ Symfony Routes
 
 ```php
 
+namespace AppBundle\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+// adds use of Route component
+
 class [Name]Controller
 
 {
