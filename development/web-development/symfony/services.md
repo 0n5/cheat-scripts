@@ -6,6 +6,11 @@ Symfony Services
 associative array that contains all of the service objects available to Symfony
 
 
+#### View available Services
+
+    php bin/console debug:container
+
+
 #### Accessing Services
 
 To access services you must extend Base Controller

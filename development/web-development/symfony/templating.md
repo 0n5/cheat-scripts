@@ -1,23 +1,13 @@
 Symfony Templating
 ==================
 
-#### Create Template View
-
-templates exist in /app/Resources/views/
-
-    nano app/Resources/views/[URL_ROUTE/[TEMPLATE_NAME].html.twig
-
-
-variables in template
-
-
 ```html
 
-    <h1>Some Text {{ TWIG_VARIABLE }}</h1>
-    
+    {{ dump() }}
+    // dump template variable prints out all variables in scope
+
 
 ```
-
 
 #### Rendering Template
 
@@ -66,3 +56,34 @@ class [Name}Controller extends Controller
 ```
 
 
+#### Create Template View
+
+templates exist in /app/Resources/views/
+
+    nano app/Resources/views/[URL_ROUTE/[TEMPLATE_NAME].html.twig
+
+
+variables in template
+
+
+```html
+
+    <h1>Some Text {{ TWIG_VARIABLE }}</h1>
+    
+
+```
+
+
+Looping
+
+```html
+
+<ul>
+    {% for [ITEM] in [ARRAY] %}
+        <li>{{ [ITEM] }}</li>
+    {% endfor %}
+</ul>
+
+
+
+```
