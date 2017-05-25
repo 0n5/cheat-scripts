@@ -1,5 +1,5 @@
-Symfony Templating
-==================
+Symfony Twig Templating
+=======================
 
 ```html
 
@@ -112,5 +112,14 @@ default template is base.html.twig
 {% endblock %}
 
 
+
+```
+
+
+#### Filters
+
+```html
+
+    {{ [TEMPLATE_VARIABLE]|raw }}  # variable passed in will not be escaped
 
 ```
