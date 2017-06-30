@@ -1,13 +1,11 @@
-jQuery
-======
+jQuery DOM Methods
+==================
 
 
-#### Elements
-
-Append 
+#### Append
 
     $("#header").prepend("something to prepend");
 
-Prepend
+#### Prepend
 
     $("#header").append("something to append");

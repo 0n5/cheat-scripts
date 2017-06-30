@@ -3,23 +3,23 @@ Django w/ Postgres
 
 #### Installation 
 
-    $ sudo apt-get update
-    $ sudo apt-get install libpq-dev python-dev
-    $ sudo apt-get install postgresql postgresql-contrib
-    $ sudo pip install psycopg2
+    sudo apt-get update
+    sudo apt-get install libpq-dev python-dev
+    sudo apt-get install postgresql postgresql-contrib
+    sudo pip install psycopg2
 
 #### Create DB
 
-    $ sudo su postgres
-    $ createdb [DATABASE]
-    $ createuser [USER] -P
-    $ psql
+    sudo su postgres
+    createdb [DATABASE]
+    createuser [USER] -P
+    psql
     postgres=# GRANT ALL PRIVILEGES ON DATABASE [DATABASE] TO [USER];
     postgres=# \q
 
 #### Connect to Django
 
-    $ nano [PROJECT]/settings.py
+    nano [PROJECT]/settings.py
 
 ``` python
 
@@ -38,4 +38,4 @@ DATABASES = {
 
 #### Migrate
 
-    $ python manage.py migrate
+    python manage.py migrate

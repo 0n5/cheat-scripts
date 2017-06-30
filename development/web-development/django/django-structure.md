@@ -1,0 +1,43 @@
+Django app structure
+====================
+
+
+    myproject/
+        manage.py
+        myproject/
+            __init__.py
+            urls.py
+            wsgi.py
+            settings/
+                __init__.py
+                base.py
+                dev.py
+                prod.py
+        app/
+            __init__.py
+            models.py
+            managers.py
+            views.py
+            urls.py
+            templates/
+                blog/
+                    base.html
+            static/
+            tests/
+                __init__.py
+                test_models.py
+                test_managers.py
+                test_views.py
+         static/
+             css/
+                 …
+             js/
+                 …
+         templates/
+             base.html
+             index.html
+         requirements/
+             base.txt
+             dev.txt
+             test.txt
+             prod.txt

@@ -3,7 +3,7 @@ Django Models
 
 #### Create Models
 
-    $ nano [APP]/models.py
+    nano [APP]/models.py
 
 ``` python
 
@@ -21,7 +21,7 @@ class [MODEL](models.Model):
 
 #### Register Models in Admin
 
-    $ nano [APP]/admin.py
+    nano [APP]/admin.py
 
 ``` python
 
@@ -33,15 +33,15 @@ admin.site.register(TABLE_B)
 
 #### Migrate Changes
 
-    $ python manage.py makemigrations [APP]  # creates new migrations based on Models
-    $ python manage.py migrate               # applies migrations 
+    python manage.py makemigrations [APP]  # creates new migrations based on Models
+    python manage.py migrate               # applies migrations 
  
-    $ python showmigrations                  # displays migration & version info
-    $ python sqlmigrate [APP] [VERSION]      # displays SQL for migration
+    python showmigrations                  # displays migration & version info
+    python sqlmigrate [APP] [VERSION]      # displays SQL for migration
 
-    $ python manage.py migrate [APP] zero    # rolls back to version 0, just delete old versions
+    python manage.py migrate [APP] zero    # rolls back to version 0, just delete old versions
     
-    $ python manage.py flush                 # wipes data in database 
+    python manage.py flush                 # wipes data in database 
 
 #### Model Field Types (common)
 
@@ -78,7 +78,7 @@ Fields are blank=False by default, pass in blank=True arg to allow empty field
  
 #### ImageField Paths 
 
-    $ nano [PROJECT]/settings.py
+    nano [PROJECT]/settings.py
 
 ``` python 
 
@@ -92,7 +92,7 @@ MEDIA_URL = 'media/'
 
 Drop into Django shell to test Models, query from cli 
 
-    $ python manage.py shell
+    python manage.py shell
     >>> from django.db import models
     >>> from [APP].models import [MODEL]
 

@@ -1,11 +1,11 @@
 Django Admin
 ============
 
-    $ python manage.py createsuperuser
+    python manage.py createsuperuser
 
 navigate to [SITE]/admin
 
-    $ python manage.py changepassword [USER]  # reset admin password
+    python manage.py changepassword [USER]  # reset admin password
 
 
 #### Register models in Admin for CRUD
@@ -29,7 +29,6 @@ admin.site.register([MODEL)
 from django.contrib import admin
 
 # Register your models here.
-from .models import [TABLE_A], [TABLE_B]
 
 class NewTableAAdmin(admin.ModelAdmin):
     fields = ['[FIELD_NAME']
