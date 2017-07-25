@@ -5,31 +5,31 @@ Homebrew Package Manager
 
 Must be admin
 
-	$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 Files are installed in the cellar
 
-	$ cd /usr/local && find cellar
+	cd /usr/local && find cellar
 
 #### Commands
 
 
-	$ brew search              # search for available applications
-	$ brew list                # lists all applications installed by homebrew
+	brew search              # search for available applications
+	brew list                # lists all applications installed by homebrew
 
-	$ brew install [NAME]  # installs application using homebrew
+	brew install [NAME]  # installs application using homebrew
 
-	$ brew remove [NAME]   # removes application
+	brew remove [NAME]   # removes application
 
-	$ brew doctor              # diagnoses common problems
+	brew doctor              # diagnoses common problems
 
 
 #### Brewfiles
 
 Must be admin
 	
-	$ brew tap Homebrew/bundle
-	$ nano Brewfile
+	brew tap Homebrew/bundle
+	nano Brewfile
 
 Add to the file:
 
@@ -52,18 +52,18 @@ Add to the file:
     
 Save file, exit and run:
 	
-	$ brew bundle
+	brew bundle
 
 Create new Brewfile with installed packages
 
-	$ brew bundle dump --force
+	brew bundle dump --force
 
 
 #### Troubleshooting
 
 Error: Cannot write to /usr/local/Cellar
 
-	$ chown -R $USER /usr/local
+	chown -R $USER /usr/local
 
 
 #### Uninstall
@@ -101,11 +101,11 @@ Create uninstall shell script:
 Make script executable and run.
 Clean up:
 
-	$ rm -rf /usr/local/Cellar /usr/local/.git
+	rm -rf /usr/local/Cellar /usr/local/.git
 
 If "unable to unlink old 'share/doc/homebrew/Acceptable-Formulae.md" error:
 	
-	$ rm -rf /usr/local
+	rm -rf /usr/local
 
 
 

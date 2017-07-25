@@ -4,7 +4,7 @@ Vim cheats
 
 #### Editing
 
-	$ vim file_to_edit
+	vim file_to_edit
 
 Once file is open in buffer:
 

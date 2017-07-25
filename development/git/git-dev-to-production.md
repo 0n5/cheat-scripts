@@ -3,20 +3,20 @@ Git Dev to Production setup
 
 #### Create Local Dev enviroinment
 
-	$ mkdir site
-	$ git init
-	$ cat 'testing' > index.html
+	mkdir site
+	git init
+	cat 'testing' > index.html
 
 #### Create Production environment
 
-	$ mkdir /home/site.git && cd /home/site.git
-	$ git init --bare
+	mkdir /home/site.git && cd /home/site.git
+	git init --bare
 
 
 #### Create Post Receieve Hook
 
-	$ cd hooks
-	$ nano post-recieve
+	cd hooks
+	nano post-recieve
 
 Add to the file:
 
@@ -39,18 +39,18 @@ done
 
 Save and exit.
 
-	$ chmod +x post-receive
+	chmod +x post-receive
 
 
 
 #### Create Remote
 
-	$ git remote add production ssh://[USER]@[SERVER]/home/site.git
+	git remote add production ssh://[USER]@[SERVER]/home/site.git
 
 
 #### Push to Production
 
-	$ git push production +master:refs/heads/master
+	git push production +master:refs/heads/master
 
 
 

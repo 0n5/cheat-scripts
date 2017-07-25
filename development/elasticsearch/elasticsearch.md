@@ -3,26 +3,26 @@ Elasticsearch
 
 #### Install Java
 
-	$ add-apt-repository ppa:webupd8team/java
-	$ apt-get update		
-	$ apt-get install oracle-java7-installer
+	add-apt-repository ppa:webupd8team/java
+	apt-get update		
+	apt-get install oracle-java7-installer
 
 #### Installation
 
-	$ wget -qO - http://packages.elasticsearch.org/GPG-KEY-elasticsearch | sudo apt-key add - 
-	$ echo 'deb http://packages.elasticsearch.org/elasticsearch/1.4/debian stable main' >> /etc/apt/sources.list
-	$ apt-get update
-	$ apt-get install elasticsearch
+	wget -qO - http://packages.elasticsearch.org/GPG-KEY-elasticsearch | sudo apt-key add - 
+	echo 'deb http://packages.elasticsearch.org/elasticsearch/1.4/debian stable main' >> /etc/apt/sources.list
+	apt-get update
+	apt-get install elasticsearch
 
 
 #### Configuration
 
-	$ update-rc.d elasticsearch defaults 95 10   # starts automatically on boot
+	update-rc.d elasticsearch defaults 95 10   # starts automatically on boot
 
 
 #### Usage
 
-	$ service elasticsearch start
+	service elasticsearch start
 
 Make sure port 9200 is open on the firewall <br>
 Visit [IP_ADDRESS:9200] to verify that it is running
@@ -32,7 +32,7 @@ Visit [IP_ADDRESS:9200] to verify that it is running
 
 Cross Origin Resource Sharing
 
-	$ nano /etc/elasticsearch/elasticsearch.yml
+	nano /etc/elasticsearch/elasticsearch.yml
 
 Add to the file: 
 
@@ -43,16 +43,16 @@ Add to the file:
 
 Save and exit. 
 
-	$ service elasticsearch restart
+	service elasticsearch restart
 
 
 #### ElasticHQ
 
 Enable CORS if not on same server
 
-	$ cd /usr/share/elasticsearch
-	$ ./plugin install royrusso/elasticsearch-HQ
-    $ service elasticsearch restart
+	cd /usr/share/elasticsearch
+	./plugin install royrusso/elasticsearch-HQ
+    service elasticsearch restart
 
 Visit [IP_ADDRESS]:9200/_plugin/HQ
 
@@ -61,14 +61,14 @@ Visit [IP_ADDRESS]:9200/_plugin/HQ
 
 Requires Ruby or RVM and Bundler
 
-	$ git clone https://github.com/secondimpression/newrelic_elasticsearch_agent.git
-    $ cd newrelic_elasticsearch_agent	
-	$ bundle install 	
+	git clone https://github.com/secondimpression/newrelic_elasticsearch_agent.git
+    cd newrelic_elasticsearch_agent	
+	bundle install 	
 
 Configuration
 
-	$ cd newrelic_elasticsearch_agent/config
-	$ nano newrelic_plugin.yml
+	cd newrelic_elasticsearch_agent/config
+	nano newrelic_plugin.yml
 
 Change these lines: 
 	
@@ -80,12 +80,12 @@ Save and exit.
 
 Running the Agent
 
-	$ cd newrelic_elasticsearch_agent
-	$ ./newrelic_elasticsearch_agent
+	cd newrelic_elasticsearch_agent
+	./newrelic_elasticsearch_agent
 
-	$ ./newrelic_elasticsearch_agent.daemon start
-	$ ./newrelic_elasticsearch_agent.daemon status
-	$ ./newrelic_elasticsearch_agent.daemon stop
+	./newrelic_elasticsearch_agent.daemon start
+	./newrelic_elasticsearch_agent.daemon status
+	./newrelic_elasticsearch_agent.daemon stop
 	
 
 
