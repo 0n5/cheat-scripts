@@ -6,7 +6,7 @@ Express Configuration
 
 In project root along side package.json file:
 
-    touch server.js
+    nano server.js
 
 ``` javascript
 
