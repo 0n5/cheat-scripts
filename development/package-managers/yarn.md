@@ -3,7 +3,13 @@ Yarn
 
 #### Installation
 
+Apt Repository
+
     apt-get install apt-transport-https  # important if using cloud9
     curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list    
     sudo apt-get update && sudo apt-get install yarn
+
+NPM
+
+    npm install -g yarn

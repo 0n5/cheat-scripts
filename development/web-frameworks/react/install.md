@@ -1,36 +1,25 @@
 React Installation
 ==================
 
-
 #### Prerequisites
 
-Install Yarn, Install Nodejs via NVM
+Install Yarn, Install Nodejs via NVM (optionally use Yarn instead of NPM)
 
     
     nvm install v8.1.2
     
-#### Create Project
+#### create-react-app
 
-    mkdir react-project
-    cd react-project
-    yarn init   # creates package.json from prompts
+Auto installs React, Babel, ESLint, Webpack and scaffolds
 
-#### Webpack
+    npm install -g create-react-app
+    create-react-app REACT_PROJECT
 
-    yarn add webpack webpack-dev-server path
+Run server
+
+    cd REACT_PROJECT
+    npm start
     
-#### Babel
+Run tests
 
-    yarn add babel-loader babel-core babel-preset-es2017 babel-preset-react --dev
-    nano .babelrc
-
-add to the file:
-
-{
-    "presets":[
-        "es2017", "react"
-    ]
-}
-
-    
-
+    npm test

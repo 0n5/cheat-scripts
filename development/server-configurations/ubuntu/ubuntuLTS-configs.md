@@ -1,6 +1,39 @@
 Ubuntu LTS configuration & Hardening
 =======================================
 
+* Create Droplet (1gb min)
+* Install Nodejs
+* Install C9 authorized key
+* Create Cloud9 SSH workspace at /
+* Setup DO firewall (SSH, DNS UDP, HTTP)
+* Configure SSH to ChallengeResponseAuthentication no, PasswordAuthentication no
+* Install unzip
+* Movie repo dirs over
+* unzip zip dir
+* install pip
+* sudo apt-get update
+* sudo apt-get install libpq-dev python-dev
+* sudo apt-get install libtiff5-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev tcl8.6-dev tk8.6-dev python-tk
+* apt-get install python-lxml
+* pip install from requirements.txt
+* apt-get install postgresql postgresql-contrib
+* create postgres db,users and grant roles
+* change DB pwd, user and IP address for allowed hosts in settings.python
+* migrate db
+* install imdb.py, python setup.py install
+* sudo apt-get install openjdk-7-jre, sudo add-apt-repository -y ppa:webupd8team/java
+* apt-get update, sudo apt-get -y install oracle-java8-installer
+* get ES from tar zip, untar. Create elastic user and chown whole dir with -R
+* python manage.py runserver 0.0.0.0:8000
+* Create front end server following similar methods
+* install nginx
+* set to start sudo update-rc.d nginx defaults
+* create web user
+* sudo chown -R $USER:$USER /var/www/angular
+* sudo chmod -R 755 /var/www
+* sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/nitratelists.com
+* sudo ln -s /etc/nginx/sites-available/nitratelists.com /etc/nginx/sites-enabled/
+
 #### SSH
 
     nano /etc/ssh/sshd_config
@@ -30,11 +63,6 @@ Restart system
     ufw status verbose  # check status
     
 
-#### Cloud 9 setup
-
-    apt-get update
-    apt-get install nodejs
-    apt-get install npm
 
 
 #### System
