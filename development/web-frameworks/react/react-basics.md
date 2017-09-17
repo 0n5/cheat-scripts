@@ -5,6 +5,7 @@ Declarative programming paradigm
 
 Follow Functional programming best practices
 
+* Try to keep components functional rather than class based whenever possible
 * Keep data immutable
 * Keep functions pure
 * Use recursion over loops
@@ -75,8 +76,10 @@ PropTypes
 state
 
 * Data structure that holds the model which is mutable
+* JS object used to record and react to user events
+* Functional components do not have state, only class based components
 * A change in state is the only thing that can change a rendered view
-* Whenever state changes it triggers a rerender of the component and view.
+* Whenever state changes it triggers a rerender of the component and view (and its children)
 * State should never be modified directly
 
 setState()
