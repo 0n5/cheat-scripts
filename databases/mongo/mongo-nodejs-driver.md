@@ -143,4 +143,30 @@ app.get('/api/cats',(req, res) => {
 
 ```
 
+Post Request
 
+``` javascript
+
+app.post('/api/cats', (req, res) => {
+    const newCat = req.body;
+    newCat.created = newDate();
+    if(!newCat.status)
+        newCat.status = 'New';
+    const err = validateCat(newCat)
+    if(err) {
+        res.status(422).json({message: `Invalid request: ${err}`});
+        return;
+    }
+    db.collection('cats').insertOne(newCat)
+        .then(result =>
+            db.collection('cats').find({_id:result.insertdId}).limit(1)
+        .next()).then(newCat => {
+            res.json(newCat); 
+        )}.catch(error => {
+            console.log(error);
+            res.status(500).json({message: `Internal Server Error: ${error}`});
+    });
+});
+// use next method on cursor or findOne to prevent large array created in memory
+
+```

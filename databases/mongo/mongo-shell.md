@@ -37,20 +37,6 @@ Remove:
 
     db.cats.remove({"_id":ObjectId("599cac0dacf51357b5170045")})
 
-Filters
-
-    $eq   # equal to operator
-    $gt   # greater than operator
-
-`db.cats.find({age: {$gte:6}})`
-
-Projections
-
-* second parameter that is passed to restrict fields in a filter
-
-`db.cats.find({age: {$gte:6}}, age:1)`
-
-
 findOne()
 
 * returns a single document instead of a cursor to be iterated over
@@ -60,6 +46,32 @@ Indexes
 * creates an index filter Mongo will use when searching
 
     db.employees.createIndex({age:6})
+
+#### Operators
+
+    $eq   # equal
+    $gt   # greater than
+    $gte  # greater than or equal to
+    $in   # matches any values in array
+    $lt   # less than
+    $lte  # less than or equal to
+    $ne   # not equal to
+    $nin  # matches none of values in the array
+
+Logical
+
+    $and
+    $not
+    $nor  # fails to match both clauses
+    $or
+
+`db.cats.find({age: {$gte:6}})`
+
+#### Projections
+
+* second parameter that is passed to restrict fields in a filter
+
+`db.cats.find({age: {$gte:6}}, age:1)`
 
 #### Scripts
 
