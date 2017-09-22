@@ -36,19 +36,30 @@ bindActionCreators
 
 * makes sure that the action created by action creator flows thru the reducers using dispatch
 
+Controlled Component
 
-React / Redux Workflow
+* Accepts its current value as props and has a callback that can change the value
+* Uses a constructor function in the component 
+* Every state mutation will have an associated handler function 
 
-1. Create reducer function to create state
-2. Create root reducer that imports reducer functions, combines them and maps state objects
-3. Create class based component that uses the state created in the reducer
-4. Component will map over the array of props sent in from the 
-5. Create mapStateToProps that takes the state and returns as props in the container (this.props)
-6. 
+#### App Structure 
 
-
-
-
-
-
-
+    App Folder/
+      node modules/
+      src/
+        actions/
+          index.js
+        components/
+          app.js
+        containers/
+          some_container.js
+          other_container.js
+        reducers/
+          index.js
+          some_reducer.js
+          other_reducer.js
+        index.js
+      .babelrc
+      index.html
+      package.json
+      webpack.config.js
