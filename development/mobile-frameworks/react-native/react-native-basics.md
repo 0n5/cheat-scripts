@@ -1,32 +1,91 @@
 React Native Basics
 ====
 
-
-#### App Creation
-
-    react-native init cats  # scaffolds application
-
-
-#### Run IOS Simulator
-
-    cd cats
-    react-native run-ios
-
-xcrun: error: unable to find utility "instruments", not a developer tool or in PATH
-
-    Open Xcode
-    Click Xcode menu
-    Select Preferences
-    Select Location
-    Set Command Line Tools to Xcode x.x if blank
-
-
-#### Run on Mac (Xcode)
-
-    Open cats/ios/cats.xcodeproj in Xcode
-    Hit run
-
-
 #### Basics
 
 * index.ios.js and index.android.js are the entry points for the app
+* AppRegistry is the JS entry point of all RN apps
+* Text Component displays text
+* View Container builds UI, supports flexbox
+
+
+#### App
+
+In index.ios.js or index.android.js:
+
+``` javascript
+
+import React from 'react';
+import { Text, AppRegistry, View } from 'react-native';
+
+
+const App = () => ( 
+    <View>
+      <Header headerText={'Cats'}/>
+    </View>   
+    )
+
+AppRegistry.registerComponent('cats', () => App);
+
+```
+
+#### Passing props from parent to child
+
+``` javascript
+
+import React from 'react';
+import { View } from 'react-native';
+
+const Cat = (props) => {
+    return (
+        <View>
+            {props.children}
+        </View>
+    );
+};
+
+}
+
+```
+
+export default Card;
+
+
+#### Links
+
+``` javascript
+
+    <Button onPress={()=> Linking.openURL(url)}>
+        Buy Now
+    </Button>
+
+```
+
+#### Scrolling
+
+Must have flex property on the root view
+
+``` javascript
+
+    <View style={{ flex: 1 }}>
+      <Header headerText={'Cats'}/>
+    </View>   
+
+```
+
+``` javascript
+    
+    ...
+    
+    import { ScrollView, Text } from 'react-native';
+
+    ...
+
+    render() {
+        return (
+        <ScrollView>
+            {this.renderCats()}
+        </ScrollView>
+    )
+
+```
