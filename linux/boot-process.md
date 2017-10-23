@@ -21,8 +21,9 @@ sysvinit runelevels
 5. X11 (full multi user with GUI desktop)
 6. Reboot
 
-
-    cat /etc/inittab   # shows default runlevel
+```
+cat /etc/inittab   # shows default runlevel
+```
 
 Change the `id:[ID]:initdefualt` line to change the default runlevel
 

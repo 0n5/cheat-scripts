@@ -13,16 +13,21 @@ procfs
 * numbers in this directory are process ID's of running processes on system
 * interrupts are numbers associated with a process used by kernel modules or drivers to interrupt CPU
 
-    cat /proc/interrupts   # contains info about the interrupts on the system and whats using them
+```
+cat /proc/interrupts   # contains info about the interrupts on the system and whats using them
+```
 
 * ioports are addresses that identify a device and the kernel module associated with it
 
-    cat /proc/ioports   # shows all plugged in devices such as drives, (SATA, IDE etc)
+```
+cat /proc/ioports   # shows all plugged in devices such as drives, (SATA, IDE etc)
+```
 
 * dma allows a device to access system memory directory 
 
-    cat /proc/dma
-
+```
+cat /proc/dma
+```
 
 sysfs
 
