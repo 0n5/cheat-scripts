@@ -45,16 +45,16 @@ Modern systems use upstart and read from the /etc/init directory
 7. Linux kernel is read and executed
 8. Devices are initialized, modules loaded into memory (initrd)
 9. Root filesystem is mounted
-10. init program loads and becomes first PID /sbin/init
-11. /etc/inittab is read and runlevel scripts are run 
+10. init program loads and becomes first PID `/sbin/init`
+11. `/etc/inittab` is read and runlevel scripts are run 
 12. modules indicated inside the runlevel scripts are loaded
 13. root file system is checked
 14. remaining local file systems are mounted
 15. network devices are started
 16. remote filesystems (if any) are mounted
-17. init rescans /etc/inittab file and changes the runlevel and completes execution of scripts
+17. init rescans `/etc/inittab` file and changes the runlevel and completes execution of scripts
 18. runlevel scripts are executed in numerical order  
-19. TTY sessions are loaded (if listed in /etc/inittab)
+19. TTY sessions are loaded (if listed in `/etc/inittab`)
 20. System login prompt displayed
 
 
