@@ -2,7 +2,7 @@ Linux Boot Process
 =====
 
 
-#### sysvinit
+### sysvinit
 
 * package containing a group of processes that control the basics functions of the system
 * includes `init` application, the first app started by the kernel after boot loader starts boot process
@@ -34,7 +34,7 @@ Change the `id:[ID]:initdefualt` line to change the default runlevel
 
 Modern systems use upstart and read from the /etc/init directory
 
-##### Boot Process for sysvinit
+#### Boot Process for sysvinit
 
 1. System powers on
 2. BIOS and / or EFI loads
@@ -58,7 +58,7 @@ Modern systems use upstart and read from the /etc/init directory
 20. System login prompt displayed
 
 
-#### RC Scripts - sysvinit
+### RC Scripts - sysvinit
 
 runlevel scripts and services
 
@@ -71,7 +71,7 @@ runlevel scripts and services
 * anything in rc.d scripts that start with `S` is a startup script
 
 
-#### Upstart
+### Upstart
 
 * primarily used by Ubuntu
 * asynch boot and shutdown process
@@ -80,7 +80,7 @@ runlevel scripts and services
 
 
 
-#### systemd
+### systemd
 
 * initialization system for bootstrapping the user space and managing all processes for system start
 * replacement for sysvinit
@@ -110,7 +110,7 @@ runlevel  # tells you what your current runlevel number is
 # Ubuntu 14 LTS
 ```
 
-##### Boot Process for systemd
+#### Boot Process for systemd
 
 1. System powers on
 2. BIOS and / or EFI loads
@@ -128,13 +128,3 @@ runlevel  # tells you what your current runlevel number is
 14. remaining local filesystems are mounted
 15. systemd sets runlevel as indicated in default target
 16. System login prompt displayed
-
-
-
-
-
-
-
-
-
-
