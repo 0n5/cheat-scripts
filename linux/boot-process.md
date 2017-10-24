@@ -69,6 +69,8 @@ runlevel scripts and services
 * scripts executed in rc0.d thru rc6.d will be executed when the inittab is read on boot for that particular runlevel selection
 * anything in rc.d scripts that start with `K` is a kill script
 * anything in rc.d scripts that start with `S` is a startup script
+* rc.local will always execute last in any runlevel
+* custom shell scripts for backups etc can go in rc.local
 
 
 ### Upstart
