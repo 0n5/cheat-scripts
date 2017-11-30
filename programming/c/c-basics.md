@@ -99,6 +99,39 @@ or
 
 ```
 
+
+#### Strings
+
+* in C strings are not a supported data type
+* a string is a one dimensional array of characters
+* the compiler will add a null character `'\0'` to the end of the string
+
+initialize char array variable
+
+``` c
+
+char name[4] = "bob";
+
+```
+
+``` c
+
+char name[4] = {'b','o','b','\0'};
+
+```
+
+
+#### Type Conversion
+
+    atoi  # convert string to integer
+
+``` c
+
+atoi(some_string)
+
+```
+
+
 #### Constants
 
 ``` c
@@ -107,3 +140,60 @@ or
     #define NAME "tomcat";   // can be redefined, not a true constant
 
 ```
+
+#### Operators
+
+    ==   # equals
+    !=   # not equal to
+    >    # greater than
+    <    # less than
+    >=   # greater than and equal to
+    <=   # less than and equal to
+
+Compound assignmentn operators
+
+    +=   # adds and assigns
+    -=   # subtracts and assigns
+    *=   # multiplies and assigns
+    /=   # divides and assigns
+
+Postfix operators
+
+    num++   # original value is returned and then increased
+    num--   # original value is returned and then decreased
+
+Prefix operators
+
+    ++num   # num is increased and then returned
+    --num   # num is decreased and then returned
+
+#### Conditionals
+
+``` c
+
+if (money > 100000) {
+    person = "rich";
+} else {
+    person = "poor";
+}
+
+```
+
+
+#### User input
+
+
+``` c
+
+gets(name) // gets user input for the name variable
+
+```
+
+
+
+
+
+
+
+
+
