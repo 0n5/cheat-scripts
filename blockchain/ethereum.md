@@ -21,6 +21,8 @@ Upgrade
 * Simulator to run tests
 * Recommended to run tests on full Ethereum node before deploying to public
 
+Install:
+
     npm install -g ethereumjs-testrpc
 
 
@@ -34,15 +36,17 @@ Framework to write tests and smart contracts
 
 #### Private Network Installation
 
-1. Create directories
+Create directories
 
     mkdr -p [TOP_LEVEL_FOLDER]/private
 
-2. Choose network identifier (cannot be 1,2 or 3)
+Choose network identifier (cannot be 1,2 or 3)
 
-3. Create Genesis Block
+Create Genesis Block
 
     nano [TOP_LEVEL_FOLDER]/private/genesis.json
+
+Add to the file:
 
 ``` js
 
@@ -76,24 +80,27 @@ Framework to write tests and smart contracts
 * `parentHash` is the hash value of the parent block (zero in the genesis only)
 * `gasLimit` is the maximum amount of gas that can be spent per block, limits processing requirements and size of each block
 
-4. Initialize Private Network
+Initialize Private Network
+
+
 
     geth --datadir ~/[TOP_LEVEL_FOLDER]/private init genesis.json
 
 * creates `geth` (chain data) and `keystore` (accounts) directories
 
-5. Create Accounts
+Create Accounts
 
     geth --datadir ~/[TOP_LEVEL_FOLDER]/private account new
 
 * will create a wallet address (hash of the public key) in the `keystore` directory
+<!-- -->
 
     geth --datadir ~/[TOP_LEVEL_FOLDER]/private account list   # lists the accounts and sequence
     
 
 #### Mining
 
-1. Create startup script
+Create startup script
 
     cd ~/[TOP_LEVEL_FOLDER]/private
     nano startnode.sh
@@ -116,6 +123,6 @@ Framework to write tests and smart contracts
 * `--password` specifies password file to use to unlock first account
 * `--ipcpath "~/Library/Ethereum/geth.ipc"` only for Mac, flag used by Mist, to tell if there is already a node running
 
-2. Make script executable
+Make script executable
 
     chmod a+x startnode.sh
