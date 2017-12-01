@@ -1,7 +1,8 @@
 Blockchain Cryptography
 =====
 
-Hashing Functions: [https://emn178.github.io/online-tools/](https://emn178.github.io/online-tools/)
+Hashing Functions: [https://emn178.github.io/online-tools/](https://emn178.github.io/online-tools/) 
+
 Blockchain Demo: [https://anders.com/blockchain/](https://anders.com/blockchain/)
 
 #### Hashing function
