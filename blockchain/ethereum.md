@@ -13,7 +13,7 @@ Install
 
 Upgrade
 
-    brew upgarde ethereum
+    brew upgrade ethereum
 
 
 #### Test RPC
