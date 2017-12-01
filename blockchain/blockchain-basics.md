@@ -1,19 +1,30 @@
 Blockchain Basics
 =====
 
+Background
+
 * solves the Byzantine General's Problem, an agreement problem between a group of generals commanding a portion of army surrounding a city
 * blockchain is more or less a design pattern
+
+Genesis Block
 
 * genesis block is the first block (block 0) of a block chain and is hardcoded into the software
 * process of creating genesis block and propagating to the network is called instantiation
 * chain of blocks residing on the genesis block are called an instance
 
+Fork
+
 * a fork would occur when a single genesis block would diverge after certain block was added
 * fork can be voluntary or because of a bug that needs to be fixed. 
 * after a fork the currency can only be used in their respective implementations and both would lose value
 
+Wallets
+
 * wallets are akin to user accounts and have an address than can be used as an ID
 * wallet addresses can accept crytpocurrency
+* users can have pseudonimity by hiding behind wallet addresses
+
+Miners & Mining
 
 * miners either have a special wallet or enable mining function in their software
 * to maximize hash rate you must have a highly optmized client that uses your hardware efficiently
@@ -24,11 +35,14 @@ Blockchain Basics
 * less secure way is to create account on a website that manages remote node and makes transactions on your behalf
 * coinbase, kraken and poloniex are examples of 3rd party sites that manage transactions
 
+Attacks
+
 * to change a transaction in history you would need to recompute the block and all subsequent blocks in the ledger
 * an attacker would need to be faster than 51% of the entire network to create a fraudulent transaction
 
+Future
+
 * proof of stake algorithms are being researched to replace inefficnent proof of work (mining) algorithms
-* users can have pseudonimity by hiding behind wallet addresses
 * transactions per second are very limited, approx 7 to 20, credit cards can process 20,000 to 40,000
 
 #### Consensus Algorithm
@@ -97,7 +111,6 @@ Bitcoin wallets: [https://bitcoin.org/en/choose-your-wallet](https://bitcoin.org
 * transactions considered finalized after 6 blocks (1 hour)
 * blocks are limited to 1MB, limits network speed to 7 transactions per second
 * total blockchain size is approx 112GB with growth rate of 4GB per month
-
 * purposely limits added smart contract code and prevents looping
 
 
@@ -115,6 +128,8 @@ Ethereum White paper [https://github.com/ethereum/wiki/wiki/White-Paper](https:/
 * transactions considered finalized after 12 blocks (3.5 minutes)
 * blocks are limited to 4 million gas, limiting the network to 20 transactions per second
 * total blockchain size is approx 40GB with growth rate of 2GB per month
+
+EVM and Mining
 
 * code runs in the EVM (Ethereum Virtual Machine)
 * code that runs in the transaction is called EVM bytecode (similar to Assembly)
