@@ -99,7 +99,7 @@ Framework to write tests and smart contracts
     nano startnode.sh
 
 ```
-    geth --networkid 4224 --mine --datadir "~/ether/private" --nodiscover 
+    geth --networkid 4224 --mine --datadir "~/[TOP_LEVEL_FOLDER]/private" --nodiscover 
     --rpc --rpcport "8545" --port "30303" --rpccorsdomain "*"
     --nat "*" --rpcapi eth,web3,personal,net --unlock 0 
     --password ~/[TOP_LEVEL_FOLDER]/private/password.sec
