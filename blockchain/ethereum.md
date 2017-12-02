@@ -110,7 +110,6 @@ Create startup script
     --rpc --rpcport "8545" --port "30303" --rpccorsdomain "*"
     --nat "*" --rpcapi eth,web3,personal,net --unlock 0 
     --password ~/[TOP_LEVEL_FOLDER]/private/password.sec
-    --ipcpath "~/Library/Ethereum/geth.ipc"
 ```
 
 * `--mine` specifies that this node should start mining as soon as it is launched
@@ -121,8 +120,49 @@ Create startup script
 * `--rpcapi eth,web3,personal,net` api's enabled in the RPC endpoint
 * `--unlock 0` unlocks the first account
 * `--password` specifies password file to use to unlock first account
-* `--ipcpath "~/Library/Ethereum/geth.ipc"` only for Mac, flag used by Mist, to tell if there is already a node running
+by Mist, to tell if there is already a node running
 
 Make script executable
 
     chmod a+x startnode.sh
+
+
+#### Miner Console
+
+    geth attach ipc:~[TOP_LEVEL_FOLDER]/private/geth.ipc
+
+Console Commands
+
+    eth.accounts   # lists all wallet addresses
+    eth.coinbase   # displays current account that is mining
+    
+    eth.getBalance(eth.coinbase)  # dispalys this wallets balance of ETH currency expressed in Wei
+
+    web3.fromWei(eth.getBalance(eth.coinbase), "ether")  # converts wei to ether
+
+    miner.stop()   # node will stop mining
+    miner.start()  # node will start mining
+    miner.start(2) # node will mine with two threads
+
+    net.version    # prints out the network ID
+
+    personal.unlockAccount(eth.accounts[1], "[PASSWORD]", 300)  # unlocks an address / account for 300 seconds
+
+    personal.unlockAccount(eth.accounts[1])  # unlocks account for default 10 minutes, will prompt for pwd
+
+    eth.sendTransaction({from: eth.coinbase, to: eth.accounts[1], value: web3.toWei(100, "ether")})
+    # transfers from current coinbase address to specified account
+    # value must be defined in Wei
+    # both accounts must be unlocked to send / recieve 
+    # transactions will not be applied if mining has been stopped
+
+    exit   # detaches console
+
+
+#### Mist
+
+[https://github.com/ethereum/mist](https://github.com/ethereum/mist)
+
+* Decentralized browser for DAPPS
+* Only secure DAPP is the Meteor DAPP Wallet
+
