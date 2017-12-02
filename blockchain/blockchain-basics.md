@@ -20,6 +20,8 @@ Fork
 
 Wallets
 
+[https://www.cryptocompare.com/wallets/#/overview](https://www.cryptocompare.com/wallets/#/overview)
+
 * wallets are akin to user accounts and have an address than can be used as an ID
 * wallet addresses can accept crytpocurrency
 * users can have pseudonimity by hiding behind wallet addresses

@@ -146,9 +146,11 @@ Console Commands
 
     net.version    # prints out the network ID
 
-    personal.unlockAccount(eth.accounts[1], "[PASSWORD]", 300)  # unlocks an address / account for 300 seconds
+    personal.unlockAccount(eth.accounts[1], "[PASSWORD]", 300)  
+    # unlocks an address / account for 300 seconds
 
-    personal.unlockAccount(eth.accounts[1])  # unlocks account for default 10 minutes, will prompt for pwd
+    personal.unlockAccount(eth.accounts[1])  
+    # unlocks account for default 10 minutes, will prompt for pwd
 
     eth.sendTransaction({from: eth.coinbase, to: eth.accounts[1], value: web3.toWei(100, "ether")})
     # transfers from current coinbase address to specified account
@@ -163,6 +165,20 @@ Console Commands
 
 [https://github.com/ethereum/mist](https://github.com/ethereum/mist)
 
-* Decentralized browser for DAPPS
-* Only secure DAPP is the Meteor DAPP Wallet
+* decentralized browser for DAPPS
+* only secure DAPP is the Meteor DAPP Wallet
+* wallet management UI for Ethereum
+* geth and mist share the same keyfile directory
 
+Launch Mist with custom IPC path:
+    
+    /Applications/Mist.app/Contents/MacOS/Mist --rpc /[TOP_LEVEL_FOLDER]/private/geth.ipc
+
+
+#### MetaMask
+
+[https://metamask.io/](https://metamask.io/)
+
+* chrome extension that turns browser into DAPP compatible platform
+* does not require a local Ethereum node, uses MetaMask server nodes
+* connect to any test networks, main network or local and remote nodes
