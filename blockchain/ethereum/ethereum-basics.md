@@ -116,7 +116,7 @@ Create startup script
 * `--nodiscover` tells the node not to start searching for peers
 * `--port` is used by nodes to connect to one other (p2p)
 * `--rpccorsdomain "*"` allows any node to connect to RPC endpoint
-* `--nat "*"` allows any nat port to be used
+* `--nat "any"` allows any nat port to be used
 * `--rpcapi eth,web3,personal,net` api's enabled in the RPC endpoint
 * `--unlock 0` unlocks the first account
 * `--password` specifies password file to use to unlock first account
