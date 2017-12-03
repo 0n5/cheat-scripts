@@ -184,6 +184,7 @@ In the Geth Console:
 * unspent gas from provisioned limits will be returned
 * if the code cannot execute because it runs out of gas, an error is thrown and gas is lost
 * constant functions cost no ether (no computation needed, no state change)
+<!-- -->
 
     testrpc   # starts up TestRPC network
     geth attach http://localhost:8545   # connect geth to TestRPC network
