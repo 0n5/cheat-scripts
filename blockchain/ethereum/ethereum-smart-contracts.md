@@ -136,4 +136,5 @@ in Node Shell
     # this triggers a new transaction and requires more gas
     # you can see the transaction in the Test RPC tab
     # if you call the getGreetings() again it will show new message
-    
+
+

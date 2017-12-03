@@ -2,6 +2,11 @@ Ethereum
 ====
 
 
+#### Transactions
+
+* transactions can be a transfer of ether, code of smart contract, call to smart contract
+* you can send ether to/from external accounts or other smart contracts
+
 #### Geth (Go Ethereum Platform)
 
 Requires Node, Xcode and Homebrew
